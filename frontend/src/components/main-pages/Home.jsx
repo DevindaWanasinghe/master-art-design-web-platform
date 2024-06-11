@@ -7,6 +7,8 @@ function Home() {
     <div className='wrapper'>
       <div className='main'>
 
+       <div>hello</div>
+
 
 
 
