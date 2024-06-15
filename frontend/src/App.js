@@ -6,13 +6,7 @@ import{ BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-<<<<<<< HEAD
-    <div>
-      
-
-    </div>
   
-=======
    <div> 
       <BrowserRouter>
         <Routes>
@@ -24,7 +18,6 @@ function App() {
       </BrowserRouter>
 
    </div>
->>>>>>> bf184c39ab5f7a7bf9d679caa93461034471a316
   );
 }
 
