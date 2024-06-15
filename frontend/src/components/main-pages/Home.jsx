@@ -8,6 +8,8 @@ function Home() {
       <div className='main'>
       <div>hello</div>
 
+       <div>hello</div>
+
 
 
 
