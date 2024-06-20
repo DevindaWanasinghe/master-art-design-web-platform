@@ -1,0 +1,12 @@
+/* Custom styles */
+body {
+  @apply bg-gray-200;
+}
+
+button {
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  @apply bg-blue-700;
+}
