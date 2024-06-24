@@ -1,48 +1,48 @@
-termsback01C {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100vw;
-            height: 100vh;
-            position: relative;
-            overflow: hidden;
+/* .termsback01C {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+} */
+
+.termstext {
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: -11px;
 }
 
-.termstext01C {
-            color: white;
-            font-family: 'Inter', sans-serif;
-            font-size: 3rem;
-            font-weight: bold;
-            font-style: italic;
-            margin-top: -11px;
-          } 
-          
 .termstext02C {
-            color: white;
-            font-family: 'Inter', sans-serif;
-            font-size: 3rem;
-            font-weight: bold;
-            font-style: italic;
-            margin-top: -11px;
-          } 
-          
+  color: white;
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: -11px;
+}
+
 .termsbutton01C {
-            position: absolute;
-            top: 24px;
-            right: -62px;
-            transform: translateX(-50%);
-            background: linear-gradient(to right,rgba(149, 115, 169, 0.4) , rgba(235, 204, 255, 0.4));
-            backdrop-filter: blur(80px); 
-            color: white;
-            font-size: 1.5rem;
-            padding: 0.2rem 5rem;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            border-radius: 188px;
-            border: 0px solid transparent; 
-            box-shadow: 0 0 0 2px rgb(201, 140, 237), 
-                        0 0 0 2px rgb(201, 140, 237), 
-                        0 0 0 2px rgb(201, 140, 237);
-            text-align: center;
-            opacity: 0.8;
-          }
+  position: absolute;
+  top: 24px;
+  right: -62px;
+  transform: translateX(-50%);
+  background: linear-gradient(to right, rgba(149, 115, 169, 0.4), rgba(235, 204, 255, 0.4));
+  backdrop-filter: blur(80px);
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.2rem 5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 188px;
+  border: 0px solid transparent;
+  box-shadow: 0 0 0 2px rgb(201, 140, 237), 
+              0 0 0 2px rgb(201, 140, 237), 
+              0 0 0 2px rgb(201, 140, 237);
+  text-align: center;
+  opacity: 0.8;
+}
