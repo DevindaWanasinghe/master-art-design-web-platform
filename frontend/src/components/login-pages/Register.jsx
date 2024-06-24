@@ -11,14 +11,21 @@ function Login() {
   return (
 
     
-    <div className="relative overflow-hidden bg-center bg-cover bg-login-bg">
+    <div className="relative min-h-screen overflow-hidden bg-center bg-cover bg-login-bg">
       
-      <div className='absolute w-[80px] min-h-screen backdrop-blur-lg border-l-0'>
-        <img src={NavBarBackground} alt='nav img'/>
+      <div className='absolute w-[80px] h-auto backdrop-blur-lg border-l-0'>
+        <img  className= 'h-auto 'src={NavBarBackground} alt='nav img'/>
       </div>
 
-      <div className=''>
-       
+      <div className='w-[667px] h-[50px] float-right flex'>
+        <div className='w-[288px] h-[38px] flex border-white border-[2px] rounded-[188px] mr-[23px]'>
+          <input type='text' placeholder='Search...' className='w-[260px] h-[38px]  bg-transparent  text-white  placeholder-white '></input>
+          <div className='w-[26px] h-[38px]'>
+            <button className='w-[22px] h-[22px]'><img className='mt-[6px]' src={Search01} alt='searching...' /></button>
+          </div>
+        </div>
+        <boutton className="w-[152px] h-[38px] backdrop-blur-lg  border-[1px] text-white text-center rounded-[188px] border-custom-purple ml-[17px]"><p className='mt-[4px]'>log in</p></boutton>
+        <boutton className="w-[152px] h-[38px] backdrop-blur-lg  border-[1px] text-white text-center rounded-[188px] border-custom-purple ml-[17px]"><p className='mt-[4px]'>sign in</p></boutton>
       </div>
       
 
