@@ -1,4 +1,4 @@
-/* Custom styles */
+/* Custom styles
 body {
   @apply bg-gray-200;
 }
@@ -9,4 +9,33 @@ button {
 
 button:hover {
   @apply bg-blue-700;
+} */
+/* template.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
 }
+
+.relative {
+  position: relative;
+  z-index: 10;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.min-h-screen {
+  min-height: 100vh;
+}
+
+.bg-cover {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+

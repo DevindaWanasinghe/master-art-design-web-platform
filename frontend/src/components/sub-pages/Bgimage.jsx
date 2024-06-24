@@ -5,25 +5,10 @@ import '../../css/template.css';
 
 const Bgimage = () => {
   return (
-    <div>
-        <div className="absolute w-full h-screen">
-          <img src={tempbgimg} alt='background1' className='object-cover w-full h-full '/> 
-        </div>
-        <div className="absolute top-[100vh] w-full h-screen">
-          <img src={tempbgimg} alt='background2' className='object-cover w-full h-full '/> 
-        </div>
-        <div className="absolute top-[200vh] w-full h-screen">
-          <img src={tempbgimg} alt='background3' className='object-cover w-full h-full '/> 
-        </div>
-        <div className="absolute top-[300vh] w-full h-screen">
-          <img src={tempbgimg} alt='background4' className='object-cover w-full h-full '/> 
-        </div>
-        <div className="absolute top-[400vh] w-full h-screen">
-          <img src={tempbgimg} alt='background5' className='object-cover w-full h-full '/> 
-        </div>
-    </div>
-  
-  );
+    <div className="fixed top-0 left-0 z-0 w-full h-full">
+    <img src={tempbgimg} alt='background' className='object-cover w-full h-full'/>
+  </div>
+);
 }
 
 export default Bgimage

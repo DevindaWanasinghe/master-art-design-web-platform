@@ -1,0 +1,57 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .relative {
+    position: relative;
+    z-index: 10;
+  }
+  
+  .fixed {
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  .min-h-screen {
+    min-height: 100vh;
+  }
+  
+  .bg-cover {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .z-10 {
+    z-index: 10;
+  }
+  
+  .z-20 {
+    z-index: 20;
+  }
+  
+  .pt-16 {
+    padding-top: 4rem;
+  }
+  
+
+  /* template.css */
+/* Add styles for heart icon */
+/* .ca:hover,
+.ca:focus {
+  background-color: #816492;
+  opacity: 1;
+}
+
+.ca {
+  background-color: #f8f8ff;
+  opacity: 0;
+} */
+
+/* .relative .ml-[-5px] .text-white .font-light {
+  font-size: 16px;
+  font-weight: bold;
+} */
