@@ -14,16 +14,34 @@ function Template() {
 
   return (
     <div>
-      <div className='relative '>
-        <img src={tempbgimg} alt='tempbgimg' className='w-full h-full '/> 
-          <div className='absolute inset-y-0 flex flex-row text-white  mt-[108px] left-0 justify-between w-full   pr-[100px] h-0'>
-            <div className='flex flex-row ml-[147px] h-[30px]'>
-              <p className='pr-16 '>BOOK COVER</p>
-              <p className='pr-16'>FACEBOOK POST</p>
-              <p className='pr-16'>HAND BILL</p>
-              <p className='pr-16'>SELF DESIGN</p>
+      {/* Background images */}
+      <div className='relative min-h-screen '>
+        <div className="absolute w-full h-screen">
+          <img src={tempbgimg} alt='background1' className='object-cover w-full h-full '/> 
+        </div>
+        <div className="absolute top-[100vh] w-full h-screen">
+          <img src={tempbgimg} alt='background2' className='object-cover w-full h-full '/> 
+        </div>
+        <div className="absolute top-[200vh] w-full h-screen">
+          <img src={tempbgimg} alt='background3' className='object-cover w-full h-full '/> 
+        </div>
+        <div className="absolute top-[300vh] w-full h-screen">
+          <img src={tempbgimg} alt='background4' className='object-cover w-full h-full '/> 
+        </div>
+        <div className="absolute top-[400vh] w-full h-screen">
+          <img src={tempbgimg} alt='background5' className='object-cover w-full h-full '/> 
+        </div>
+
+        {/* Navigate Bar */}
+        <div className="relative z-10">
+          <div className='absolute inset-y-0 left-0 flex flex-col justify-between w-full pr-0 mt-16 ml-[-26px] text-white md:flex-row  md:pr-[96px]'>
+            <div className='flex flex-col ml-4 space-y-4 md:flex-row md:ml-36 h-7 md:space-y-0'>
+              <p className='pr-4 md:pr-16'>BOOK COVER</p>
+              <p className='pr-4 md:pr-16'>FACEBOOK POST</p>
+              <p className='pr-4 md:pr-16'>HAND BILL</p>
+              <p className='pr-4 md:pr-16'>SELF DESIGN</p>
             </div>
-            <div className='flex flex-row space-x-20 h-[30px]'>
+            <div className='flex flex-row mt-4 space-x-[10px] md:space-x-20 h-7 md:mt-0'>
               <div className='flex space-x-2'>
                 {<FaHeart size={20}/>}
                 <span className=' text-[14px] font-medium'>{heartCount}</span>
@@ -35,42 +53,29 @@ function Template() {
             </div>  
           </div>
 
-          <div className=" mt-[-1200px]">
-            <div className="container grid  h-[1000px] grid-cols-4 auto-rows-auto  gap-x-14 gap-y-24 ">
-
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-           
+          {/* Rendering  cards */}
+          <div className="p-4 mt-44 md:mt-0">
+            <div className="container grid grid-cols-1 gap-4 mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-14 md:gap-y-24"> 
+              {Array.from({ length: 36 }).map((_, index) => (
+                <Card key={index} />
+              ))}
             </div>
+          </div>  
           </div>
-
-
-         
-
-          
       </div>
       
     </div>
   );
 }
 
+// Card styling
 const Card = () => (
-  <div className=''>
-  <div className='bg-white bg-opacity-10 w-[227px] h-[350px] absolute mt-[180px] ml-[147px] rounded-[20px] border-white border-2'>
-    <div className='w-[227px] h-[127px] mt-[221px] bg-opacity-70 bg-neutral-600 rounded-b-[20px] ml-[-2.5px] border-white border-2'>
+  <div className='relative ml-[-150px]'>
+  <div className='relative w-56 mb-[-200px] ml-4 bg-white border-2 border-white rounded-lg bg-opacity-10 h-80 md:mt-44 md:ml-36 '>
+    <div className='w-56 h-[94px] mt-56 bg-opacity-70 bg-neutral-600 rounded-b-lg ml-[-2.0px] border-white border-2'>
 
     </div>
-      <img src={sampleImage} className='object-contain w-[165px] h-[234px] mt-[-310px] ml-[32px] border-blue-700 border'/>
+      <img src={sampleImage} className='object-contain w-[165px] h-[234px] mt-[-285px]  ml-[32px] border-blue-700 border '/>
   </div>
 </div>
 
