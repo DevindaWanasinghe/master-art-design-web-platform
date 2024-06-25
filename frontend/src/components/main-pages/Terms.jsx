@@ -48,7 +48,7 @@ function Terms() {
       <div className="termstext">
         <img
           src={TermsBack}
-          alt="Overlay image background"
+          alt="Overlayimage background"
           className="absolute inset-0 object-cover w-full h-full"
         />
       </div>
