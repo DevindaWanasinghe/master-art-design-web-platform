@@ -64,17 +64,14 @@
   }
 
   .text04C {
-    color: white;
-    font-family: 'Inter', sans-serif;
-    font-size: 1.2rem;
     font-weight: regular;
-    font-style: italic;
-    margin-top: 244.6px;
-    margin-right: 90px;
-    text-align: right;
     line-height: 1.0;
   }
-  
+  .inter{
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    line-height: 0.9;
+  }
   @media (min-width: 768px) {
     .custom-text {
       font-size: 2rem;
@@ -88,7 +85,6 @@
   }
 
   .button01C {
-    position: absolute;
     top: 650px;
     right: -29px;
     transform: translateX(-50%);
@@ -114,7 +110,7 @@
   }
 
   .arrow01C {
-    position: absolute;
+    /*position: absolute;*/
     top: 651px;
     left: 1161px;
     transform: translateX(-50%);

@@ -8,6 +8,9 @@ module.exports = {
       },
       colors:{
         'custom-purple':"#9573A9",
+      },
+      fontFamily: {
+        inter: ['Inter', 'sans-serif'],
       }
   },
 },
