@@ -1,18 +1,19 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios';
-import sampleImage from '../../images/sampleimg.png';
+import sampleImage from '../../images/TemplateImg/bc2.jpg';
+import sampleImage2 from '../../images/TemplateImg/bc1.jpg';
 import '../../../src/index.css';
-//import '../../css/template.css';
-import Navigatebar from '../sub-pages/Navigatebar';
-import Bgimage from '../sub-pages/Bgimage';
-//import { FaHeart } from "react-icons/fa";
+import Navigatebar from '../common/Navigatebar';
+import Bgimage from '../common/Bgimage';
+import Card from '../common/Card';
 //import { Link } from 'react-router-dom';
-
+//import '../../css/template.css';
 
 function Template() {
 
   const [templates, setTemplates] = useState([]);
-  //const [favorites, setFavorites] = useState([]);
+  const [heartCount, setHeartCount] = useState(0);
+  const [anyHeartRed, setAnyHeartRed] = useState(false);
 
   useEffect(() => {
     axios.get('http://localhost:5000/api/templates')
@@ -23,7 +24,7 @@ function Template() {
         console.error('error fetching the templates!', error);
 
         //sample image
-        setTemplates(generateDummyTemplates(40));
+        setTemplates(generateDummyTemplates(12));
         
       });
   }, []);
@@ -33,39 +34,36 @@ function Template() {
     return Array.from({ length: count }, (_, index) => ({
       name: `Template ${index + 1}`,
       price: `Rs ${(0 + 500)}`,
-      image: sampleImage, 
-      //isFavorite: false,  Initial state for favorites
+      image: sampleImage,sampleImage2, 
     }));
   };
 
+  const incrementHeartCount = () => {
+    setHeartCount(heartCount + 1);
+  };
 
-  //  // Toggle favorite status of a template
-  //  const toggleFavorite = (templateId) => {
-  //   const updatedTemplates = templates.map(template => {
-  //     if (template.id === templateId) {
-  //       return { ...template, isFavorite: !template.isFavorite };
-  //     }
-  //     return template;
-  //   });
-  //   setTemplates(updatedTemplates);
-  //   updateFavorites(updatedTemplates);
-  // };
+  const decrementHeartCount = () => {
+    setHeartCount(heartCount - 1);
+  };
 
-  // // Update favorites count for the navigation bar
-  // const updateFavorites = (updatedTemplates) => {
-  //   const newFavorites = updatedTemplates.filter(template => template.isFavorite);
-  //   setFavorites(newFavorites);
-  // };
-
-
-
+  
+ // Update the state to track if any card's heart icon is red
+  const updateHeartStatus = (isRed) => {
+    if (isRed) {
+      setAnyHeartRed(true);
+    } else {
+      // Recheck all cards to see if any heart is red
+      const anyRed = templates.some(template => template.isRed);
+      setAnyHeartRed(anyRed);
+    }
+  };
 
   return (
     <div>
       {/* Background images */}
       <div className='relative min-h-screen '>
         <Bgimage/>
-        <Navigatebar />
+        <Navigatebar heartCount={heartCount} anyHeartRed={anyHeartRed} /> {/*Pass heartCount and anyHeartRed to Navigatebar */}
 
           <div className="relative z-10 pt-16">
                 <div className='pb-28 '></div>
@@ -78,7 +76,9 @@ function Template() {
                         name={template.name}
                         price={template.price}
                         image={template.image}
-                        //toggleFavorite={toggleFavorite}
+                        incrementHeartCount={incrementHeartCount}
+                        decrementHeartCount={decrementHeartCount}
+                        updateHeartStatus={updateHeartStatus}
                       />
                       ))}   
                   </div>
@@ -88,31 +88,6 @@ function Template() {
     </div>
   );
 }
-
-// Card styling
-const Card = ({ name, price, image}) => (
-  <div className='relative ml-[0px]  w-[230px] '>
-  <div className='relative w-56 mb-[10px]  border-2 border-[#F8F8FF] rounded-[30px] bg-opacity-10 h-[345px] md:mt-[20px] md:ml-[0px] backdrop-blur-md mt-[0px]  lg:ml-0 sm:mb-[0px] '>
-    <div className='w-56 h-[119px] mt-56 bg-opacity-70 bg-neutral-600 rounded-b-[30px] ml-[-2.0px] border-white border-2'>
-
-    </div>
-      <img src={image || sampleImage} className='object-contain w-[165px] h-[234px] mt-[-310px]  ml-[28px] border-blue-700 border'/>
-      <div className=' ml-[-5px] text-center'>
-          <div className='text-white text-[13px] font-light'>{name}</div>
-          <div className='text-white text-[17px] font-medium '>{price}</div>
-      </div>
-
-          {/* <div
-            className={`absolute top-0 right-0 mt-[11px] mr-[11px] cursor-pointer ${Template.isFavorite ? 'text-red-500' : 'text-white'}`}
-            //onClick={() => toggleFavorite(Template.id)}
-          >
-           <FaHeart />
-          </div>
-       */}
-      <div className='w-[99px] h-[31px] rounded-[100px]  border-2 ml-[59px] mt-[14px] bg-[#816492] bg-opacity-100  ca'><p className='pl-[16px] pt-[1px] text-white text-[15px] font-medium'>Buy Now</p></div>
-  </div>
-</div>
-);
 
 
 export default Template

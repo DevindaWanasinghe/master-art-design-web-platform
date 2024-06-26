@@ -5,6 +5,7 @@ import Template from './components/main-pages/Template';
 import Selfdesign from './components/sub-pages/Selfdesign';
 import Facebook from './components/sub-pages/Facebook';
 import Handbill from './components/sub-pages/Handbill';
+import Payment from './components/sub-pages/Payment';
 
 import Terms from'./components/main-pages/Terms';
 import Register from'./components/login-pages/Register';
@@ -25,6 +26,8 @@ function App() {
           <Route path='/template/selfdesign' element={<Selfdesign/>}></Route>
           <Route path='/template/facebook' element={<Facebook/>}></Route>
           <Route path='/template/handbill' element={<Handbill/>}></Route>
+          <Route path='/payment' element={<Payment/>}></Route>
+
 
         </Routes>
 
