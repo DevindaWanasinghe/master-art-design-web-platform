@@ -62,7 +62,7 @@ function Home() {
           captivating tales unleash your creativity, and connect with fellow
           adventurers. Explore boundless realms where imagination reigns
           supreme. Join us and discover a world where every click sparks new
-          adventures. Let Whimsy be your guide to endless inspiration!
+          adventures.  Let Whimsy be your guide to endless inspiration!
         </p>
       </div>
       <div>
