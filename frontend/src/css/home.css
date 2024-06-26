@@ -242,6 +242,10 @@
     height: auto;
     z-index: 10;
   }
+
+.icon{
+  fill:purple; 
+}
  a .active{
-    color: red;
+    color: blue;
   }
