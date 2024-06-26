@@ -239,7 +239,7 @@
     z-index: 10;
   }
 .icon{
-    color: red;
+    color: rgb(201, 140, 237);
   }
 
 a.active .icon{

@@ -5,6 +5,8 @@ import Template from './components/main-pages/Template';
 import Selfdesign from './components/sub-pages/Selfdesign';
 import Facebook from './components/sub-pages/Facebook';
 import Handbill from './components/sub-pages/Handbill';
+import About from './components/main-pages/About';
+import Login from './components/login-pages/Login';
 
 import Terms from'./components/main-pages/Terms';
 import Register from'./components/login-pages/Register';
@@ -20,8 +22,10 @@ function App() {
           <Route  index element={<Home/>}></Route>
           <Route path = "/account" element={<Account/>}></Route>
           <Route path = "/template" element={<Template/>}></Route>
+          <Route path = "/about" element={<About/>}></Route>
           <Route path = "/terms" element={<Terms/>}></Route>
           <Route path = "/register" element={<Register/>}></Route>
+          <Route path = "/login" element={<Login/>}></Route>
           <Route path='/template/selfdesign' element={<Selfdesign/>}></Route>
           <Route path='/template/facebook' element={<Facebook/>}></Route>
           <Route path='/template/handbill' element={<Handbill/>}></Route>
