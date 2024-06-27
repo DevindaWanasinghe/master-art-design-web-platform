@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 function Payment() {
 
     const location = useLocation();
-    const { name, price, image, templates, index  } = location.state || {};
+    const { name, price, image } = location.state || {};
 
     const navigate = useNavigate();
 
@@ -20,29 +20,8 @@ function Payment() {
   };
 
 
+  const whatsappNumber = '+94778663845';
 
-  const handlePreview = () => {
-    if (index > 0) {
-      const prevTemplate = templates[index - 1];
-      navigate('/payment', { state: { ...prevTemplate, templates, index: index - 1 } });
-    }
-  };
-
-  const handleNext = () => {
-    if (index < templates.length - 1) {
-      const nextTemplate = templates[index + 1];
-      navigate('/payment', { state: { ...nextTemplate, templates, index: index + 1 } });
-    }
-  };
-
-
-  
-
-
-
-
-
-  const whatsappNumber = '+94778663845';  
     
   return (
     <div>
@@ -62,18 +41,10 @@ function Payment() {
                                      {/* box-content  p-6 border-2 border-blue-600 */}
                                      <div className='flex justify-between w-full mt-[-250px]'>
                                         <div className=' w-[50px] h-[95px] bg-[#D9D9D9] rounded-l-[15px] md:ml-[-12px] lg:mt-[-80px] lg:ml-[-61px] xl:ml-[-61px] sm:ml-[60px] '>
-                                            <img 
-                                                src={PreviewButton}
-                                                alt='Preview' 
-                                                className='w-[50px] h-[50px] cursor-pointer mt-[20px]' 
-                                                onClick={handlePreview} />
+                                            <img src={PreviewButton} alt='Preview' className='w-[50px] h-[50px] cursor-pointer mt-[20px]' onClick={() => console.log('Preview clicked')} />
                                         </div>
                                         <div className='w-[50px] h-[95px] bg-[#D9D9D9] rounded-r-[15px] md:mr-[-12px]  lg:mt-[-80px] lg:mr2-[-61px] lg:mr-[-61px] sm:mr-[60px] '>
-                                            <img 
-                                                src={NextButton} 
-                                                alt='Next' 
-                                                className='w-[50px] h-[50px] cursor-pointer mt-[20px]' 
-                                                onClick={handleNext} />
+                                            <img src={NextButton} alt='Next' className='w-[50px] h-[50px] cursor-pointer mt-[20px]' onClick={() => console.log('Next clicked')} />
                                         </div>
                                     </div>
                             </div>
@@ -90,11 +61,11 @@ function Payment() {
                         <p className=' text-[42px] font-bold text-[#F8F8FF] text-center items-center m-auto ml-[-30px]'>WhatsApp</p>
                     </div>
                         
-                    <div className=' mt-[-20px]'>
+                    <div className=' mt-[-8px] lg:ml-[14px]'>
                         <img src={WpImage2} alt='wpimage2'/>
                     </div>
 
-                    <div className=' w-[354px] h-[50px] bg-Green bg-[#73A97B] rounded-[14px] backdrop-blur-md lg:ml-4'>
+                    <div className=' w-[354px] h-[50px] bg-Green bg-[#73A97B] rounded-[14px] backdrop-blur-md lg:ml-4  mt-3'>
                         <p className='pt-[4px] m-auto text-center text-white text-[24px] font-semibold'>
                             <a href={`https://wa.me/${whatsappNumber}`} target="_blank"  rel="noopener noreferrer">
                                 {/*  rel="noopener noreferrer" */}
@@ -103,8 +74,8 @@ function Payment() {
                         </p>
                     </div>
                     
-                    <Link>
-                        <div className=' w-[151px] h-[38px] rounded-[188px] bg-[#9573A9] border-[2px] items-center justify-center m-auto mt-5'  onClick={handleGoBack}>
+                    <Link to='/target-page'>
+                        <div className=' w-[151px] h-[38px] rounded-[188px] bg-[#9573A9] border-[2px] items-center justify-center m-auto mt-[40px]'  onClick={handleGoBack}>
                             <p className='m-auto font-medium text-center text-white text-[20px] pt-[1px]'>close</p>
                         </div>
                     </Link>

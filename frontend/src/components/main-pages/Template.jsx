@@ -46,7 +46,6 @@ function Template() {
     setHeartCount(heartCount - 1);
   };
 
-  
  // Update the state to track if any card's heart icon is red
   const updateHeartStatus = (isRed) => {
     if (isRed) {
@@ -79,8 +78,6 @@ function Template() {
                         incrementHeartCount={incrementHeartCount}
                         decrementHeartCount={decrementHeartCount}
                         updateHeartStatus={updateHeartStatus}
-                        templates={templates}
-                        index={index}
                       />
                       ))}   
                   </div>
