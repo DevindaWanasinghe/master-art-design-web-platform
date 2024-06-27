@@ -3,7 +3,7 @@ import { FaHeart } from "react-icons/fa";
 import sampleImage from '../../images/TemplateImg/sampleimg.png';
 import { Link } from 'react-router-dom';
 
-const Card = ({ name, price, image,incrementHeartCount, decrementHeartCount, updateHeartStatus}) => {
+const Card = ({name, price, image,incrementHeartCount, decrementHeartCount, updateHeartStatus,templates, index }) => {
 
     const [isRed, setIsRed] = useState(false);
   
@@ -35,7 +35,7 @@ const Card = ({ name, price, image,incrementHeartCount, decrementHeartCount, upd
             <div className="absolute top-0 right-0 mt-[11px] mr-[11px] cursor-pointer" onClick={toggleHeartColor}>
              <FaHeart color={isRed ? 'red' : 'white'}  />
             </div>
-        <Link to='/payment' state={{ name, price, image }}>
+        <Link to='/payment' state={{  name, price, image, templates, index}}>
           <div className='w-[99px] h-[31px] rounded-[100px]  border-2 ml-[59px] mt-[14px] bg-[#816492] bg-opacity-100  ca'><p className='pl-[16px] pt-[1px] text-white text-[15px] font-medium'>Buy Now</p></div>
         </Link>
     </div>

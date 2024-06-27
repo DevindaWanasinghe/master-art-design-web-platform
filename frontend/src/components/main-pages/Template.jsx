@@ -79,6 +79,8 @@ function Template() {
                         incrementHeartCount={incrementHeartCount}
                         decrementHeartCount={decrementHeartCount}
                         updateHeartStatus={updateHeartStatus}
+                        templates={templates}
+                        index={index}
                       />
                       ))}   
                   </div>

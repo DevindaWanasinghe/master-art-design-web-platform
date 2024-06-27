@@ -55,3 +55,28 @@ body, html {
   font-size: 16px;
   font-weight: bold;
 } */
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  transition: color 0.3s;
+}
+
+.nav-link:hover {
+  color: rgb(180, 180, 180);
+}
+
+.nav-link.active p {
+  color: #facc15;
+}
+
+.nav-link.active:after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 63%;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+}
