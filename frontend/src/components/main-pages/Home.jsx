@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import 'tailwindcss/tailwind.css';
 import backgroundImage from '../../images/Home/Background girl image.png';  
 
-import header from './Header';
-import slidebar from './Sidebar';
+import Sidebar from "../main-pages/Sidebar";
+import Header from "../main-pages/Header";
 
 const HomePage = () => {
   const [customerSatisfaction, setCustomerSatisfaction] = useState(0);
@@ -13,7 +13,7 @@ const HomePage = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCustomerSatisfaction(prev => (prev < 100 ? prev + 1 : 100));
-      setTotalActiveUsers(prev => (prev < 10000 ? prev + 10000 : 10000));
+      setTotalActiveUsers(prev => (prev < 1000000 ? prev + 10000 : 1000000));
       setTeamMembers(prev => (prev < 50 ? prev + 1 : 50));
     }, 100);
 
@@ -23,39 +23,40 @@ const HomePage = () => {
   return (
     <div className="relative min-h-screen text-white font-inter" style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
       <div className="absolute inset-0 bg-black opacity-50"></div>
-      <div>
-        <header></header>
-        <slidebar></slidebar>
-      </div>
+      
+      <Sidebar />
+      <Header />
+
       <div className="relative z-10">
         <header className="flex items-center justify-between p-5">
-          <img src="logo.png" alt="Logo" className="h-10" />
         </header>
-        <main className="flex flex-col items-center justify-center px-10 mt-20">
-          <div className="text-right ">
-            <h1 className="italic font-bold leading-none text-7xl">WHERE IDEAS</h1>
-            <h1 className="italic font-bold leading-none text-9xl"> SPARKLE</h1>
+        <main className="flex flex-col px-10 mt-20">
+          <div className="text-right">
+            <h1 className="italic font-bold ng-none font- text-7xl">WHERE IDEAS</h1>
+            <h1 className="italic font-extrabold ing-none font text-9xl"> SPARKLE</h1>
             <h1 className="italic font-bold leading-none text-8xl">ONLINE</h1>
-            <p className="mt-4 text-lg ">
-              Dive into a digital wonderland with Whimsy! Journey through captivating tales,
-              unleash your creativity, and connect with fellow adventurers. Explore boundless
-              realms where imagination reigns supreme. Join us and discover a world where
-              every click sparks new adventures. Let Whimsy be your guide to endless inspiration!
+            <p className="mt-4 mr-2 text-2xl">
+              Dive into a digital wonderland with Whimsy! Journey through captivating tales,<br/>
+              unleash your creativity, and connect with fellow adventurers. Explore boundless<br/>
+              realms where imagination reigns supreme. Join us and discover a world where<br/>
+              every click sparks new adventures. Let Whimsy be your guide to endless inspiration!<br/>
             </p>
             <button className="px-6 py-3 mt-6 bg-purple-600 rounded">Get Started</button>
           </div>
-          <div className="flex flex-col items-center mt-10 space-y-8 md:flex-row md:space-y-0 md:space-x-16">
-            <div className="text-center">
-              <h2 className="font-bold text-8xl">{customerSatisfaction}%</h2>
-              <p className="text-xl">customer satisfaction</p>
-            </div>
-            <div className="text-center">
-              <h2 className="font-bold text-8xl">{totalActiveUsers.toLocaleString()}+</h2>
-              <p className="text-xl">total active users</p>
-            </div>
-            <div className="text-center">
-              <h2 className="font-bold text-8xl">{teamMembers}</h2>
-              <p className="text-xl">team members</p>
+          <div className="flex justify-center mt-10">
+            <div className="flex flex-col items-center space-y-8 md:flex-row md:space-y-0 md:space-x-16">
+              <div className="text-center">
+                <h2 className="font-bold text-8xl">{customerSatisfaction}%</h2>
+                <p className="text-xl">customer satisfaction</p>
+              </div>
+              <div className="text-center">
+                <h2 className="font-bold text-8xl">{totalActiveUsers.toLocaleString()}+</h2>
+                <p className="text-xl">total active users</p>
+              </div>
+              <div className="text-center">
+                <h2 className="font-bold text-8xl">{teamMembers}</h2>
+                <p className="text-xl">team members</p>
+              </div>
             </div>
           </div>
         </main>
@@ -71,7 +72,7 @@ const HomePage = () => {
           </div>
         </section>
         <section className="mt-20 text-center">
-        <h2 className="text-5xl italic font-bold">WHY CHOOSE US</h2>
+          <h2 className="text-5xl italic font-bold">WHY CHOOSE US</h2>
           <ul className="mt-4 space-y-4 text-left list-disc list-inside md:text-center md:space-y-0 md:space-x-4 md:list-none md:flex md:justify-center">
             <li className="p-6 bg-purple-700 rounded">
               <h3 className="text-2xl">5-Hour Delivery Time</h3>
