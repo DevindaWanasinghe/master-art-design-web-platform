@@ -236,7 +236,7 @@
   .navbarback01C {
     position: absolute;
     top: 0px;
-    left: 120px;
+    left: 30px;
     transform: translateX(-50%);
     width: 85px;
     height: auto;
@@ -249,3 +249,4 @@
  a .active{
     color: blue;
   }
+

@@ -11,6 +11,8 @@ import Login from './components/login-pages/Login';
 
 import Terms from'./components/main-pages/Terms';
 import Register from'./components/login-pages/Register';
+
+import AdminPanel from './components/admin/AdminPanel';
 import{ BrowserRouter, Routes, Route } from "react-router-dom";
 import RegisterSuccess from './components/login-pages/RegisterSuccess';
 
@@ -32,6 +34,7 @@ function App() {
           <Route path='/template/facebook' element={<Facebook/>}></Route>
           <Route path='/template/handbill' element={<Handbill/>}></Route>
           <Route path='/payment' element={<Payment/>}></Route>
+          <Route path='/admin' element={<AdminPanel/>}></Route>
 
 
         </Routes>
