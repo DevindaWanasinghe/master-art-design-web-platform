@@ -6,7 +6,7 @@ import { FcGoogle } from "react-icons/fc";
 import Validation from "../../script/loginvalidation";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import { useGoogleLogin } from '@react-oauth/google';
 function Login() {
 
   const [Inputvalues,setInputvalues] = useState({
@@ -19,6 +19,13 @@ function Login() {
   const navigate = useNavigate();
   axios.defaults.withCredentials = true;
 
+  //google login
+  const login = useGoogleLogin({
+    onSuccess: credentialResponse => console.log(credentialResponse),
+    onError: console.log("Login Failed")
+  });
+
+  //custom login
   const handelsubmit =(e)=>{
     e.preventDefault();
     seterrors(Validation(Inputvalues));
@@ -53,7 +60,7 @@ function Login() {
       <div><Sidebar></Sidebar></div>
       <div><Header></Header></div>
       
-      <div className='w-1/4 h-[500px] rounded-[33px] border-[2px] border-white backdrop-blur-xl mt-[77px] block absolute left-2/3'>
+      <div className='w-1/4 h-[492px] rounded-[33px] border-[2px] border-white backdrop-blur-xl mt-[77px] block absolute left-2/3'>
         <form onSubmit={handelsubmit}>
             <p className=' text-white text-[48px] text-center mt-[15px]'>Welcome!</p>
             <input onChange={e => setInputvalues({...Inputvalues,email:e.target.value})} className='w-5/6 h-[45px] bg-transparent border-[1px] border-white rounded-[14px] mt-[15px]   text-white placeholder-white focus:outline-0  p-4 lg:ml-[25px] md:ml-[15px]'placeholder='Email' type='Email' name='Email'></input>
@@ -65,7 +72,7 @@ function Login() {
             </button>
             <p className='ml-6 text-white text-[15px]'>forgot Password?</p>
             <p className='text-center text-white text-[15px]'>or</p>
-            <button className='w-5/6 h-[45px] bg-#9573A9 border-[1px] rounded-[14px] mt-[30px] ml-[24px] text-white font-bold text-[15px]  hover:bg-blue-700  border-white flex justify-center' ><FcGoogle size={20} className=' ml-[2px] mt-[12px]' /><p className='mt-[10px] ml-[2px]'>Continue With Google</p></button>
+            <button onClick={()=>{login()}} className='w-5/6 h-[45px] bg-#9573A9 border-[1px] rounded-[14px] mt-[30px] ml-[24px] text-white font-bold text-[15px]  hover:bg-blue-700  border-white flex justify-center' ><FcGoogle size={20} className=' ml-[2px] mt-[12px]' /><p className='mt-[10px] ml-[2px]'>Continue With Google</p></button>
         </form>
       </div>
 
