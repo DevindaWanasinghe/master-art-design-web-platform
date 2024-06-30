@@ -4,6 +4,7 @@ import backgroundImage from '../../images/Home/Background girl image.png';
 
 import Sidebar from "../main-pages/Sidebar";
 import Header from "../main-pages/Header";
+import Bgimage from '../common/Homebg';
 
 const HomePage = () => {
   const [customerSatisfaction, setCustomerSatisfaction] = useState(0);
@@ -21,19 +22,28 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen text-white font-inter" style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+    <div className="relative min-h-screen text-white font-inter" 
+      // style={{
+      //   backgroundImage: `url(${backgroundImage})`,
+      //   backgroundSize: 'cover',
+      //   backgroundPosition: 'center',
+      //   backgroundAttachment: 'fixed',
+      // }}
+    >
+      <Bgimage/>
+      {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
       
       <Sidebar />
       <Header />
 
       <div className="relative z-10">
         <header className="flex items-center justify-between p-5">
+          {/* Header Content */}
         </header>
         <main className="flex flex-col px-10 mt-20">
           <div className="text-right">
-            <h1 className="italic font-bold ng-none font- text-7xl">WHERE IDEAS</h1>
-            <h1 className="italic font-extrabold ing-none font text-9xl"> SPARKLE</h1>
+            <h1 className="italic font-bold ng-none text-7xl">WHERE IDEAS</h1>
+            <h1 className="italic font-extrabold ng-none text-9xl"> SPARKLE</h1>
             <h1 className="italic font-bold leading-none text-8xl">ONLINE</h1>
             <p className="mt-4 mr-2 text-2xl">
               Dive into a digital wonderland with Whimsy! Journey through captivating tales,<br/>
@@ -46,7 +56,7 @@ const HomePage = () => {
           <div className="flex justify-center mt-10">
             <div className="flex flex-col items-center space-y-8 md:flex-row md:space-y-0 md:space-x-16">
               <div className="text-center">
-                <h2 className="font-bold text-8xl">{customerSatisfaction}%</h2>
+                <h2 className="font-extrabold text-8xl">{customerSatisfaction}%</h2>
                 <p className="text-xl">customer satisfaction</p>
               </div>
               <div className="text-center">
@@ -61,7 +71,7 @@ const HomePage = () => {
           </div>
         </main>
         <section className="mt-20 text-center">
-          <h2 className="text-5xl italic font-bold">OUR TOP CATEGORIES</h2>
+          <h2 className="text-5xl italic font-bold" style={{ color: 'rgba(149, 115, 169, 1)' }}>OUR TOP CATEGORIES</h2>
           <div className="mt-4 overflow-hidden">
             <div className="whitespace-nowrap animate-marquee">
               <span className="mx-4 text-4xl font-bold">TUTE COVER</span>
@@ -72,23 +82,23 @@ const HomePage = () => {
           </div>
         </section>
         <section className="mt-20 text-center">
-          <h2 className="text-5xl italic font-bold">WHY CHOOSE US</h2>
+          <h2 className="text-5xl italic font-bold" style={{ color: 'rgba(149, 115, 169, 1)' }}>WHY CHOOSE US</h2>
           <ul className="mt-4 space-y-4 text-left list-disc list-inside md:text-center md:space-y-0 md:space-x-4 md:list-none md:flex md:justify-center">
-            <li className="p-6 bg-purple-700 rounded">
+            <li className="p-6 rounded-[100px] border-white border-[2px]" style={{ backgroundColor: 'rgba(149, 115, 169, 1)' }}>
               <h3 className="text-2xl">5-Hour Delivery Time</h3>
               <p>Get your templates fast with our lightning-quick 5-hour delivery.</p>
             </li>
-            <li className="p-6 bg-purple-700 rounded">
+            <li className="p-6 rounded-[100px] border-white border-[2px]" style={{ backgroundColor: 'rgba(149, 115, 169, 1)' }}>
               <h3 className="text-2xl">Affordable Prices</h3>
               <p>Enjoy high-quality designs at prices that won't break the bank.</p>
             </li>
-            <li className="p-6 bg-purple-700 rounded">
+            <li className="p-6 rounded-[100px] border-white border-[2px]" style={{ backgroundColor: 'rgba(149, 115, 169, 1)' }}>
               <h3 className="text-2xl">Wide Selection</h3>
               <p>Choose from a vast array of templates to fit any project or style.</p>
             </li>
-            <li className="p-6 bg-purple-700 rounded">
+            <li className="p-6 rounded-[100px] border-white border-[2px] " style={{ backgroundColor: 'rgba(149, 115, 169, 1)' }}>
               <h3 className="text-2xl">Easy Customization</h3>
-              <p>Effortlessly tailor our templates to meet your specific needs.</p>
+              <p >Effortlessly tailor our templates to meet your specific needs.</p>
             </li>
           </ul>
         </section>
