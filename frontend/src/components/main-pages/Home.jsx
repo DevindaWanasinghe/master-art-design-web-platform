@@ -1,77 +1,117 @@
-import React from "react";
-import Bimage1 from "../../images/Home/Background girl image.png";
-import Arrow01 from "../../images/Home/Arrow.png";
-import Search01 from "../../images/Home/search.png";
-import Logo01 from "../../images/Home/LOGO 1.png";
-import NavBarBackground from "../../images/Home/NavBarbackground.png";
+import React, { useEffect, useState } from 'react';
+import 'tailwindcss/tailwind.css';
+import backgroundImage from '../../images/Home/Background girl image.png';  
 
-import "./../../css/home.css"; // Import custom CSS
+const HomePage = () => {
+  const [customerSatisfaction, setCustomerSatisfaction] = useState(0);
+  const [totalActiveUsers, setTotalActiveUsers] = useState(0);
+  const [teamMembers, setTeamMembers] = useState(0);
 
-function Home() {
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCustomerSatisfaction(prev => (prev < 100 ? prev + 1 : 100));
+      setTotalActiveUsers(prev => (prev < 1000000 ? prev + 10000 : 1000000));
+      setTeamMembers(prev => (prev < 50 ? prev + 1 : 50));
+    }, 100);
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
-    <div className="relative w-full h-screen overflow-hidden">
-      {/* Background Image */}
-      <img 
-        src={Bimage1}
-        alt="Overlay image1"
-        className="fixed absolute inset-0 z-0 object-cover w-full h-full"
-      />
-      
-      {/* Text Overlay */}
-      <div className="absolute text02C" style={{ left: "625.02px", top: "183.62px" }}>
-        <h1 className="text01C">WHERE, IDEAS</h1>
-      </div>
-      <div className="absolute text02C" style={{ left: "625.02px", top: "213.62px" }}>
-        <h1 className="text02C">SPARKLE</h1>
-      </div>
-      <div className="absolute text02C" style={{ left: "625.02px", top: "243.62px" }}>
-        <h1 className="text03C">ONLINE</h1>
-      </div>
-      <div className="absolute text02C" style={{ left: "625.02px", top: "283.62px" }}>
-        <p className="text04C">
-          Dive into a digital wonderland with Whimsy! Journey through captivating tales, unleash your creativity, and connect with fellow adventurers. Explore boundless realms where imagination reigns supreme. Join us and discover a world where every click sparks new adventures. Let Whimsy be your guide to endless inspiration!
-        </p>
-      </div>
-      <div>
-        <button className="button01C">GET STARTED</button>
-        <img src={Arrow01} alt="Arrow" className="arrow01C" />
-      </div>
-      <div>
-        <button className="button02C">log in</button>
-        <button className="button03C">sign in</button>
-        <button className="button04C">search...</button>
-        <img src={Search01} alt="Search" className="search01C" />
-      </div>
-      <div>
-        <img src={Logo01} alt="Logo" className="logo01C" />
-        <img src={Logo01} alt="Logo" className="logo02C" />
-        <img src={NavBarBackground} alt="NavBarBackground" className="navbarback01C" />
-      </div>
-      
-      {/* Coundown text */}
-      <div className="relative grid grid-cols-3 pl-[250px] pt-[800px] text-cente8r font-inter">
-      <div>
-          <h1 className="font-bold text-white text-9xl">00%</h1>
-          {/* <CountUp start={0} end={10} duration={2.75}></Countup> */}
-          <p className="font-medium text-white">Customer Satisfaction</p>
-        </div>
-        <div>
-          <h1 className="font-bold text-white text-9xl">50+</h1>
-          <p className="font-medium text-white">Projects Completed</p>
-        </div>
-        <div>
-          <h1 className="font-bold text-white text-9xl">100+</h1>
-          <p className="font-medium text-white">Happy Clients</p>
-        </div>
-
-        
-      </div>
-       {/* Our Top catogery */}
-       <div className="relative pl-[250px] pt-[800px] text-cente8r font-inter">
-        <h1 className="font-bold text-white text-9xl">OUR TOP CATEGORIES</h1>
+    <div className="relative min-h-screen text-white font-inter" style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div className="relative z-10">
+        <header className="flex items-center justify-between p-5">
+          <img src="logo.png" alt="Logo" className="h-10" />
+          <div className="flex space-x-4">
+            <button className="px-4 py-2 bg-purple-600 rounded">Log In</button>
+            <button className="px-4 py-2 bg-purple-800 rounded">Sign In</button>
+          </div>
+        </header>
+        <main className="flex flex-col items-center justify-center px-10 mt-20">
+          <div className="text-right ">
+            <h1 className="font-bold leading-none text-9xl">WHERE</h1>
+            <h1 className="font-bold leading-none text-9xl">IDEAS SPARKLE</h1>
+            <h1 className="font-bold leading-none text-9xl">ONLINE</h1>
+            <p className="mt-4 text-lg ">
+              Dive into a digital wonderland with Whimsy! Journey through captivating tales,
+              unleash your creativity, and connect with fellow adventurers. Explore boundless
+              realms where imagination reigns supreme. Join us and discover a world where
+              every click sparks new adventures. Let Whimsy be your guide to endless inspiration!
+            </p>
+            <button className="px-6 py-3 mt-6 bg-purple-600 rounded">Get Started</button>
+          </div>
+          <div className="flex flex-col items-center mt-10 space-y-8 md:flex-row md:space-y-0 md:space-x-16">
+            <div className="text-center">
+              <h2 className="font-bold text-8xl">{customerSatisfaction}%</h2>
+              <p className="text-xl">customer satisfaction</p>
+            </div>
+            <div className="text-center">
+              <h2 className="font-bold text-8xl">{totalActiveUsers.toLocaleString()}+</h2>
+              <p className="text-xl">total active users</p>
+            </div>
+            <div className="text-center">
+              <h2 className="font-bold text-8xl">{teamMembers}</h2>
+              <p className="text-xl">team members</p>
+            </div>
+          </div>
+        </main>
+        <section className="mt-20 text-center">
+          <h2 className="text-3xl font-bold">OUR TOP CATEGORIES</h2>
+          <div className="mt-4 overflow-hidden">
+            <div className="whitespace-nowrap animate-marquee">
+              <span className="mx-4 text-2xl font-bold">TUTE COVER</span>
+              <span className="mx-4 text-2xl font-bold">FACEBOOK POST</span>
+              <span className="mx-4 text-2xl font-bold">HAND BILL</span>
+              <span className="mx-4 text-2xl font-bold">PERSONAL DESIGN</span>
+            </div>
+          </div>
+        </section>
+        <section className="mt-20 text-center">
+          <h2 className="text-3xl font-bold">WHY CHOOSE US</h2>
+          <ul className="mt-4 space-y-4 text-left list-disc list-inside md:text-center md:space-y-0 md:space-x-4 md:list-none md:flex md:justify-center">
+            <li className="p-6 bg-purple-700 rounded">
+              <h3 className="text-2xl">5-Hour Delivery Time</h3>
+              <p>Get your templates fast with our lightning-quick 5-hour delivery.</p>
+            </li>
+            <li className="p-6 bg-purple-700 rounded">
+              <h3 className="text-2xl">Affordable Prices</h3>
+              <p>Enjoy high-quality designs at prices that won't break the bank.</p>
+            </li>
+            <li className="p-6 bg-purple-700 rounded">
+              <h3 className="text-2xl">Wide Selection</h3>
+              <p>Choose from a vast array of templates to fit any project or style.</p>
+            </li>
+            <li className="p-6 bg-purple-700 rounded">
+              <h3 className="text-2xl">Easy Customization</h3>
+              <p>Effortlessly tailor our templates to meet your specific needs.</p>
+            </li>
+          </ul>
+        </section>
+        <footer className="p-6 mt-20 text-center bg-gray-800">
+          <div className="flex justify-center mb-4 space-x-4">
+            <input type="email" placeholder="Email" className="px-4 py-2 bg-gray-700 rounded" />
+            <button className="px-4 py-2 bg-purple-600 rounded">Subscribe</button>
+          </div>
+          <div className="flex justify-center mb-4 space-x-4">
+            <a href="#"><img src="facebook-icon.png" alt="Facebook" className="h-6" /></a>
+            <a href="#"><img src="instagram-icon.png" alt="Instagram" className="h-6" /></a>
+            <a href="#"><img src="whatsapp-icon.png" alt="WhatsApp" className="h-6" /></a>
+            <a href="#"><img src="contact-icon.png" alt="Contact" className="h-6" /></a>
+          </div>
+          <nav className="space-x-4">
+            <a href="#" className="hover:underline">Home</a>
+            <a href="#" className="hover:underline">Template</a>
+            <a href="#" className="hover:underline">Account</a>
+            <a href="#" className="hover:underline">Contact Us</a>
+            <a href="#" className="hover:underline">Notifications</a>
+            <a href="#" className="hover:underline">Terms & Conditions</a>
+          </nav>
+          <p className="mt-4">&copy; 2024 Nadine Coelho. All Rights Reserved.</p>
+        </footer>
       </div>
     </div>
   );
-}
+};
 
-export default Home;
+export default HomePage;
