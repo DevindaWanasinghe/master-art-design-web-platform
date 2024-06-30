@@ -25,9 +25,9 @@ function Footer() {
             <a href="#"><img src={Call} alt="Contact" className="h-6" /></a>
           </div>
           <div className="space-x-4">
-            <Link to='/'> <p className="hover:underline">Home</p> </Link>
+            <Link to='/'> <a className="hover:underline">Home</a> </Link>
             <Link to='/template'> <a className="hover:underline">Template</a> </Link>
-             <p className="hover:underline"><Link to='/account'>Account</Link></p> 
+            <Link to='/account'><a className="hover:underline">Account</a></Link>
             <Link to='/terms'> <a className="hover:underline">Terms & Conditions</a> </Link>
           </div>
           <p className="mt-4">&copy; 2024 Nadine Coelho. All Rights Reserved.</p>
