@@ -5,7 +5,7 @@ import Navigatebar from '../common/Navigatebar';
 import Bgimage from '../common/Bgimage';
 import Card from '../common/Card';
 import sampleImage from '../../images/TemplateImg/bc2.jpg';
-//import sampleImage2 from '../../images/TemplateImg/bc1.jpg';
+import sampleImage2 from '../../images/TemplateImg/bc1.jpg';
 //import { Link } from 'react-router-dom';
 //import '../../css/template.css';
 
@@ -39,7 +39,7 @@ function Template() {
     return Array.from({ length: count }, (_, index) => ({
       name: `Template ${index + 1}`,
       price: `Rs ${(0 + 500)}`,
-      image: sampleImage, 
+      image: sampleImage,sampleImage2,
     }));
   };
 

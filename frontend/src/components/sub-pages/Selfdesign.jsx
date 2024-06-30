@@ -75,7 +75,7 @@ function Selfdesign() {
                         key={index}
                         name={template.name}
                         price={template.price}
-                        image={template.image}
+                        image_url={template.image_url}
                         incrementHeartCount={incrementHeartCount}
                         decrementHeartCount={decrementHeartCount}
                         updateHeartStatus={updateHeartStatus}

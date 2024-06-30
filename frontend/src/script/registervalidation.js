@@ -29,17 +29,17 @@ function Validation(values){
     if(values.password === ""){
         error.password = "password Should not be empty";
     }else if(!password_pattern.test(values.password)){
-        error.password = "password Didn't match";
+        error.password = "weak password";
     }else{
         error.password = "";
     }
 
     if(values.repeatePassword === ""){
-        error.password = "re-enter-password Should not be empty";
-    }else if(values.repeatePassword != values.password){
-        error.password = "password Didn't match";
+        error.repeatePassword = "re-enter-password Should not be empty";
+    }else if(!(values.repeatePassword === values.password)){
+        error.repeatePassword = "password Didn't match";
     }else{
-        error.password = "";
+        error.repeatePassword = "";
     }
 
     return error;

@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import { FaHeart } from "react-icons/fa";
-import sampleImage from '../../images/TemplateImg/sampleimg.png';
+//import sampleImage from '../../images/TemplateImg/sampleimg.png';
 import { Link } from 'react-router-dom';
 
 const Card = ({name, price, image_url, incrementHeartCount, decrementHeartCount, updateHeartStatus }) => {
@@ -35,7 +35,7 @@ const Card = ({name, price, image_url, incrementHeartCount, decrementHeartCount,
       <div className='w-56 h-[119px] mt-56 bg-opacity-70 bg-neutral-600 rounded-b-[30px] ml-[-2.0px] border-white border-2'>
   
       </div>
-        <img src={image_url || sampleImage} className='object-contain w-[165px] h-[234px] mt-[-310px]  ml-[28px] border-blue-700 border' alt={name}/>
+        <img src={image_url} className='object-contain w-[165px] h-[234px] mt-[-310px]  ml-[28px] border-blue-700 border' alt={name}/>
         <div className=' ml-[-5px] text-center'>
             <div className='text-white text-[13px] font-light'>{name}</div>
             <div className='text-white text-[17px] font-medium '>{price}</div>

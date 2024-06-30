@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios';
-//import sampleImage from '../../images/TemplateImg/f1.jpg';
+import sampleImage from '../../images/TemplateImg/f1.jpg';
 import '../../../src/index.css';
 import Navigatebar from '../common/Navigatebar';
 import Bgimage from '../common/Bgimage';
@@ -17,17 +17,18 @@ function Facebook() {
     axios.get('http://localhost:5000/api/templates?section=Facebook Post')
       .then(response => {
         setTemplates(response.data);
+        console.log(response.data);
       })
       .catch(error => {
         console.error('error fetching the templates!', error);
 
         //sample image
-        //setTemplates(generateDummyTemplates(16));
+        setTemplates(generateDummyTemplates(16));
         
       });
   }, []);
 
-  /*for sample image
+  //for sample image
   const generateDummyTemplates = (count) => {
     return Array.from({ length: count }, (_, index) => ({
       name: `Template ${index + 1}`,
@@ -35,7 +36,6 @@ function Facebook() {
       image: sampleImage, 
     }));
   };
-  */
 
   const incrementHeartCount = () => {
     setHeartCount(heartCount + 1);
@@ -71,11 +71,12 @@ function Facebook() {
                 <div className="p-4 mt-44 md:mt-0 sm:mt-0">
                   <div className="container grid grid-cols-1 gap-4 mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-[56px] md:gap-y-[96px] sm:gap-y-[100px] sm:ml-[40px] ml-[150px] xl:ml-[180px] lg:ml-[-10px]"> 
                   {templates.map((template, index) => (
+               
                     <Card
                       key={index}
                       name={template.name}
                       price={template.price}
-                      image={template.image}
+                      image_url={template.image_url}
                       incrementHeartCount={incrementHeartCount}
                       decrementHeartCount={decrementHeartCount}
                       updateHeartStatus={updateHeartStatus}

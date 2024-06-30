@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js"
+    "start": "nodemon src/server.js"
   },
   "keywords": [],
   "author": "",
@@ -18,7 +18,7 @@
     "googleapi": "^1.0.2",
     "googleapis": "^140.0.1",
     "mysql2": "^3.10.1",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.4"
   },
   "description": ""
 }

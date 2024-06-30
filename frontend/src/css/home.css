@@ -1,4 +1,4 @@
-.text01C {
+/* .text01C {
     color: white;
     font-family: 'Inter', sans-serif;
     font-size: 4.9rem;
@@ -26,7 +26,7 @@
     font-size: 9.5rem;
     font-weight: bold;
     font-style: italic;
-    margin-top: -11px;
+    margin-top: -40px;
   }
   
   @media (min-width: 768px) {
@@ -236,7 +236,7 @@
   .navbarback01C {
     position: absolute;
     top: 0px;
-    left: 120px;
+    left: 30px;
     transform: translateX(-50%);
     width: 85px;
     height: auto;
@@ -244,8 +244,23 @@
   }
 
 .icon{
-  fill:purple; 
+  fill:#9573A9; 
 }
  a .active{
     color: blue;
   }
+ */
+ @keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 15s linear infinite;
+}

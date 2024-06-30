@@ -1,4 +1,5 @@
 import './App.css';
+
 import Home from './components/main-pages/Home';
 import Account from './components/main-pages/Account';
 import Template from './components/main-pages/Template';
@@ -13,6 +14,7 @@ import Register from'./components/login-pages/Register';
 
 import AdminPanel from './components/admin/AdminPanel';
 import{ BrowserRouter, Routes, Route } from "react-router-dom";
+import RegisterSuccess from './components/login-pages/RegisterSuccess';
 
 
 function App() {
@@ -26,6 +28,7 @@ function App() {
           <Route path = "/template" element={<Template/>}></Route>
           <Route path = "/terms" element={<Terms/>}></Route>
           <Route path = "/register" element={<Register/>}></Route>
+          <Route path = "/registersuccess" element={<RegisterSuccess/>}></Route>
           <Route path = "/login" element={<Login/>}></Route>
           <Route path='/template/selfdesign' element={<Selfdesign/>}></Route>
           <Route path='/template/facebook' element={<Facebook/>}></Route>
