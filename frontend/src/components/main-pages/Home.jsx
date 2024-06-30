@@ -5,6 +5,9 @@ import backgroundImage from '../../images/Home/Background girl image.png';
 import Sidebar from "../main-pages/Sidebar";
 import Header from "../main-pages/Header";
 import Bgimage from '../common/Homebg';
+import Footer from '../common/Footer';
+
+import Logo from '../../images/Home/LOGO 1.png';
 
 const HomePage = () => {
   const [customerSatisfaction, setCustomerSatisfaction] = useState(0);
@@ -81,7 +84,7 @@ const HomePage = () => {
             </div>
           </div>
         </section>
-        <section className="mt-20 text-center">
+        <section className="mt-20 text-center ">
           <h2 className="text-5xl italic font-bold" style={{ color: 'rgba(149, 115, 169, 1)' }}>WHY CHOOSE US</h2>
           <ul className="mt-4 space-y-4 text-left list-disc list-inside md:text-center md:space-y-0 md:space-x-4 md:list-none md:flex md:justify-center">
             <li className="p-6 rounded-[100px] border-white border-[2px]" style={{ backgroundColor: 'rgba(149, 115, 169, 1)' }}>
@@ -102,7 +105,8 @@ const HomePage = () => {
             </li>
           </ul>
         </section>
-        <footer className="p-6 mt-20 text-center bg-gray-800">
+        <Footer/>
+        {/* <footer className="p-6 mt-20 text-center bg-gray-800">
           <div className="flex justify-center mb-4 space-x-4">
             <input type="email" placeholder="Email" className="px-4 py-2 bg-gray-700 rounded" />
             <button className="px-4 py-2 bg-purple-600 rounded">Subscribe</button>
@@ -122,7 +126,7 @@ const HomePage = () => {
             <a href="#" className="hover:underline">Terms & Conditions</a>
           </nav>
           <p className="mt-4">&copy; 2024 Nadine Coelho. All Rights Reserved.</p>
-        </footer>
+        </footer> */}
       </div>
     </div>
   );
