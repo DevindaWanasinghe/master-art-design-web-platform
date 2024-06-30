@@ -2,12 +2,12 @@ import React from 'react'
 import Search01 from "../../images/Home/search.png";
 import Logo01 from "../../images/Home/LOGO 1.png";
 import { NavLink } from 'react-router-dom';
-import '../../css/loginpages.css';
+import '../../css/login-register.css';
 
 function Header() {
   return (
 
-    <div>
+    <div className=''>
       <div className='absolute inline w-screen'>
         <div><img src={Logo01} alt='logo' className='w-[75px] h-[58px] ml-[75px] mt-2 float-left'></img></div>
 
