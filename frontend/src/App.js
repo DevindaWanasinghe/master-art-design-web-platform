@@ -13,6 +13,10 @@ import Terms from'./components/main-pages/Terms';
 import Register from'./components/login-pages/Register';
 
 import AdminPanel from './components/admin/AdminPanel';
+import AdminAdd from './components/admin/AdminAdd';
+import AdminDelete from './components/admin/AdminDelete';
+import AdminUpdate from './components/admin/AdminUpdate';
+
 import{ BrowserRouter, Routes, Route } from "react-router-dom";
 import RegisterSuccess from './components/login-pages/RegisterSuccess';
 
@@ -35,6 +39,9 @@ function App() {
           <Route path='/template/handbill' element={<Handbill/>}></Route>
           <Route path='/payment' element={<Payment/>}></Route>
           <Route path='/admin' element={<AdminPanel/>}></Route>
+          <Route path='/admin/add' element={<AdminAdd/>}></Route>
+          <Route path='/admin/update' element={<AdminUpdate/>}></Route>
+          <Route path='/admin/delete' element={<AdminDelete/>}></Route>
 
 
         </Routes>
