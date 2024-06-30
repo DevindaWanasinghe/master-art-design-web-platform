@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import 'tailwindcss/tailwind.css';
 import backgroundImage from '../../images/Home/Background girl image.png';  
 
+import header from './Header';
+import slidebar from './Sidebar';
+
 const HomePage = () => {
   const [customerSatisfaction, setCustomerSatisfaction] = useState(0);
   const [totalActiveUsers, setTotalActiveUsers] = useState(0);
@@ -10,7 +13,7 @@ const HomePage = () => {
   useEffect(() => {
     const timer = setInterval(() => {
       setCustomerSatisfaction(prev => (prev < 100 ? prev + 1 : 100));
-      setTotalActiveUsers(prev => (prev < 1000000 ? prev + 10000 : 1000000));
+      setTotalActiveUsers(prev => (prev < 10000 ? prev + 10000 : 10000));
       setTeamMembers(prev => (prev < 50 ? prev + 1 : 50));
     }, 100);
 
@@ -20,19 +23,19 @@ const HomePage = () => {
   return (
     <div className="relative min-h-screen text-white font-inter" style={{ backgroundImage: `url(${backgroundImage})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }}>
       <div className="absolute inset-0 bg-black opacity-50"></div>
+      <div>
+        <header></header>
+        <slidebar></slidebar>
+      </div>
       <div className="relative z-10">
         <header className="flex items-center justify-between p-5">
           <img src="logo.png" alt="Logo" className="h-10" />
-          <div className="flex space-x-4">
-            <button className="px-4 py-2 bg-purple-600 rounded">Log In</button>
-            <button className="px-4 py-2 bg-purple-800 rounded">Sign In</button>
-          </div>
         </header>
         <main className="flex flex-col items-center justify-center px-10 mt-20">
           <div className="text-right ">
-            <h1 className="font-bold leading-none text-9xl">WHERE</h1>
-            <h1 className="font-bold leading-none text-9xl">IDEAS SPARKLE</h1>
-            <h1 className="font-bold leading-none text-9xl">ONLINE</h1>
+            <h1 className="italic font-bold leading-none text-7xl">WHERE IDEAS</h1>
+            <h1 className="italic font-bold leading-none text-9xl"> SPARKLE</h1>
+            <h1 className="italic font-bold leading-none text-8xl">ONLINE</h1>
             <p className="mt-4 text-lg ">
               Dive into a digital wonderland with Whimsy! Journey through captivating tales,
               unleash your creativity, and connect with fellow adventurers. Explore boundless
@@ -57,18 +60,18 @@ const HomePage = () => {
           </div>
         </main>
         <section className="mt-20 text-center">
-          <h2 className="text-3xl font-bold">OUR TOP CATEGORIES</h2>
+          <h2 className="text-5xl italic font-bold">OUR TOP CATEGORIES</h2>
           <div className="mt-4 overflow-hidden">
             <div className="whitespace-nowrap animate-marquee">
-              <span className="mx-4 text-2xl font-bold">TUTE COVER</span>
-              <span className="mx-4 text-2xl font-bold">FACEBOOK POST</span>
-              <span className="mx-4 text-2xl font-bold">HAND BILL</span>
-              <span className="mx-4 text-2xl font-bold">PERSONAL DESIGN</span>
+              <span className="mx-4 text-4xl font-bold">TUTE COVER</span>
+              <span className="mx-4 text-4xl font-bold">FACEBOOK POST</span>
+              <span className="mx-4 text-4xl font-bold">HAND BILL</span>
+              <span className="mx-4 text-4xl font-bold">PERSONAL DESIGN</span>
             </div>
           </div>
         </section>
         <section className="mt-20 text-center">
-          <h2 className="text-3xl font-bold">WHY CHOOSE US</h2>
+        <h2 className="text-5xl italic font-bold">WHY CHOOSE US</h2>
           <ul className="mt-4 space-y-4 text-left list-disc list-inside md:text-center md:space-y-0 md:space-x-4 md:list-none md:flex md:justify-center">
             <li className="p-6 bg-purple-700 rounded">
               <h3 className="text-2xl">5-Hour Delivery Time</h3>
