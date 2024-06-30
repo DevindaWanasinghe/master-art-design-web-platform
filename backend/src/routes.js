@@ -2,9 +2,18 @@ const express = require('express');
 const router = express.Router();
 const db = require('./db');
 
-// Get all templates
-router.get('/templates', (req, res) => {
-    db.query('SELECT * FROM templates', (err, results) => {
+// Get templates by section
+router.get('/templates', async(req, res) => {
+    const { section } = req.query;
+    let query = 'SELECT * FROM templates';
+    let params = [];
+
+    if (section) {
+        query += ' WHERE section = ?';
+        params.push(section);
+    }
+
+    db.query(query, params,(err, results) => {
         if (err) {
             res.status(500).send(err);
         } else {

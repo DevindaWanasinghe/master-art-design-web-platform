@@ -1,11 +1,11 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios';
-import sampleImage from '../../images/TemplateImg/bc2.jpg';
-import sampleImage2 from '../../images/TemplateImg/bc1.jpg';
 import '../../../src/index.css';
 import Navigatebar from '../common/Navigatebar';
 import Bgimage from '../common/Bgimage';
 import Card from '../common/Card';
+import sampleImage from '../../images/TemplateImg/bc2.jpg';
+//import sampleImage2 from '../../images/TemplateImg/bc1.jpg';
 //import { Link } from 'react-router-dom';
 //import '../../css/template.css';
 
@@ -15,9 +15,12 @@ function Template() {
   const [heartCount, setHeartCount] = useState(0);
   const [anyHeartRed, setAnyHeartRed] = useState(false);
 
+
   useEffect(() => {
-    axios.get('http://localhost:5000/api/templates')
+    axios.get('http://localhost:5000/api/templates?section=Book Cover')
       .then(response => {
+        console.log(response.data);     
+        //check image_url
         setTemplates(response.data);
       })
       .catch(error => {
@@ -29,14 +32,18 @@ function Template() {
       });
   }, []);
 
+
+
   //for sample image
   const generateDummyTemplates = (count) => {
     return Array.from({ length: count }, (_, index) => ({
       name: `Template ${index + 1}`,
       price: `Rs ${(0 + 500)}`,
-      image: sampleImage,sampleImage2, 
+      image: sampleImage, 
     }));
   };
+
+  
 
   const incrementHeartCount = () => {
     setHeartCount(heartCount + 1);
@@ -46,7 +53,7 @@ function Template() {
     setHeartCount(heartCount - 1);
   };
 
- // Update the state to track if any card's heart icon is red
+ // Update the state to track if any cards heart icon is red
   const updateHeartStatus = (isRed) => {
     if (isRed) {
       setAnyHeartRed(true);
@@ -74,7 +81,7 @@ function Template() {
                         key={index}
                         name={template.name}
                         price={template.price}
-                        image={template.image}
+                        image_url={template.image_url}
                         incrementHeartCount={incrementHeartCount}
                         decrementHeartCount={decrementHeartCount}
                         updateHeartStatus={updateHeartStatus}

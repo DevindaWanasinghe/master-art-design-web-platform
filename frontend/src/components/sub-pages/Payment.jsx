@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 function Payment() {
 
     const location = useLocation();
-    const { name, price, image } = location.state || {};
+    const { name, price, image_url } = location.state || {};
 
     const navigate = useNavigate();
 
@@ -35,9 +35,9 @@ function Payment() {
                     </div>
 
                     <div className='flex items-center justify-center w-full h-ful'> 
-                        {image && (
+                        {image_url && (
                             <div className='relative flex flex-col items-center w-full h-full max-w-full max-h-full'>
-                                     <img src={image} alt={name} className='object-contain w-full h-auto max-h-full mb-4 sm:w-1/2 md:w-3/4 lg:w-[392px] xl:w-[392px] xl:mt-4 lg:mt-[20px] md:mt-[60px] rounded-[31px]' />      
+                                     <img src={image_url} alt={name} className='object-contain w-full h-auto max-h-full mb-4 sm:w-1/2 md:w-3/4 lg:w-[392px] xl:w-[392px] xl:mt-4 lg:mt-[20px] md:mt-[60px] rounded-[31px]' />      
                                      {/* box-content  p-6 border-2 border-blue-600 */}
                                      <div className='flex justify-between w-full mt-[-250px]'>
                                         <div className=' w-[50px] h-[95px] bg-[#D9D9D9] rounded-l-[15px] md:ml-[-12px] lg:mt-[-80px] lg:ml-[-61px] xl:ml-[-61px] sm:ml-[60px] '>

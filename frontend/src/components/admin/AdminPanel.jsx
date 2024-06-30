@@ -26,7 +26,7 @@ function AdminPanel() {
       <input type="text" name="image_url" value={template.image_url} onChange={handleChange} placeholder="Image URL" />
       <select name="section" value={template.section} onChange={handleChange}>
         <option value="Book Cover">Book Cover</option>
-        <option value="Brochure">Brochure</option>
+        <option value="Hand Bill">Hand Bill</option>
         <option value="Facebook Post">Facebook Post</option>
         <option value="Self Design">Self Design</option>
       </select>

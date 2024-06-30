@@ -1,6 +1,6 @@
 import React,{useEffect,useState} from 'react'
 import axios from 'axios';
-import sampleImage from '../../images/TemplateImg/sd1.jpg';
+//import sampleImage from '../../images/TemplateImg/sd1.jpg';
 import '../../../src/index.css';
 import Navigatebar from '../common/Navigatebar';
 import Bgimage from '../common/Bgimage';
@@ -14,7 +14,7 @@ function Selfdesign() {
   const [anyHeartRed, setAnyHeartRed] = useState(false);
 
   useEffect(() => {
-    axios.get('http://localhost:5000/api/templates')
+    axios.get('http://localhost:5000/api/templates?section=Self Design')
       .then(response => {
         setTemplates(response.data);
       })
@@ -22,12 +22,12 @@ function Selfdesign() {
         console.error('error fetching the templates!', error);
 
         //sample image
-        setTemplates(generateDummyTemplates(24));
+        //setTemplates(generateDummyTemplates(24));
         
       });
   }, []);
 
-  //for sample image
+  /*for sample image
   const generateDummyTemplates = (count) => {
     return Array.from({ length: count }, (_, index) => ({
       name: `Template ${index + 1}`,
@@ -35,6 +35,7 @@ function Selfdesign() {
       image: sampleImage, 
     }));
   };
+  */
 
   const incrementHeartCount = () => {
     setHeartCount(heartCount + 1);

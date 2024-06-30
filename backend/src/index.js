@@ -4,11 +4,16 @@ const cors = require('cors');
 const routes = require('./routes');
 
 const app = express();
-const port = 5000;
+const port = process.env.PORT || 5000;
 
 app.use(cors());
 app.use(bodyParser.json());
 app.use('/api', routes);
+
+// Define a route for the root URL
+app.get('/', (req, res) => {
+    res.send('Welcome to the API!');
+  });
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
