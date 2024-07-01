@@ -32,12 +32,15 @@ const HomePage = () => {
       //   backgroundPosition: 'center',
       //   backgroundAttachment: 'fixed',
       // }}
-    >
+      > 
       <Bgimage/>
+      <div><Sidebar></Sidebar></div>
+      <div><Header></Header></div>
+      
       {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
       
-      <Sidebar />
-      <Header />
+
+      {/* <div className="pb-[0.2px]"></div> */}
 
       <div className="relative z-10">
         <header className="flex items-center justify-between p-5">
@@ -94,19 +97,19 @@ const HomePage = () => {
         <section className="mt-20 text-center ">
           <h2 className="text-5xl italic font-extrabold text-[#9573A9]">WHY CHOOSE US</h2>
           <ul className="mt-4 space-y-4 text-left list-disc list-inside bg-opacity-75 md:text-center md:space-y-0 md:space-x-4 md:list-none md:flex md:justify-center">
-            <li className="p-6 rounded-[100px] border-white border-[2px] bg-opacity-75 bg-gradient-to-r from-[#9573A9] to-[#D3A4F0]  hover:from-[#e9d8fd] hover:to-[#9f7aea]" >
+            <li className="p-6 h-[100px] rounded-[100px] border-white border-[2px] bg-opacity-75 bg-gradient-to-r from-[#9573A9] to-[#D3A4F0]  hover:from-[#e9d8fd] hover:to-[#9f7aea]" >
               <h3 className="text-2xl">5-Hour Delivery Time</h3>
               <p>Get your templates fast with our lightning-quick 5-hour delivery.</p>
             </li>
-            <li className="p-6 rounded-[100px] border-white border-[2px] bg-gradient-to-r from-[#9573A9] to-[#D3A4F0]  hover:from-[#e9d8fd] hover:to-[#9f7aea] " >
+            <li className="p-6 h-[100px] rounded-[100px] border-white border-[2px] bg-gradient-to-r from-[#9573A9] to-[#D3A4F0]  hover:from-[#e9d8fd] hover:to-[#9f7aea] " >
               <h3 className="text-2xl">Affordable Prices</h3>
               <p>Enjoy high-quality designs at prices that won't break the bank.</p>
             </li>
-            <li className="p-6 rounded-[100px] border-white border-[2px] bg-gradient-to-r from-[#9573A9] to-[#D3A4F0]  hover:from-[#e9d8fd] hover:to-[#9f7aea] " >
+            <li className="p-6 h-[100px] rounded-[100px] border-white border-[2px] bg-gradient-to-r from-[#9573A9] to-[#D3A4F0]  hover:from-[#e9d8fd] hover:to-[#9f7aea] " >
               <h3 className="text-2xl">Wide Selection</h3>
               <p>Choose from a vast array of templates to fit any project or style.</p>
             </li>
-            <li className="p-6 rounded-[100px] border-white border-[2px] bg-gradient-to-r from-[#9573A9] to-[#D3A4F0]  hover:from-[#e9d8fd] hover:to-[#9f7aea] " >
+            <li className="p-6 h-[100px] rounded-[100px] border-white border-[2px] bg-gradient-to-r from-[#9573A9] to-[#D3A4F0]  hover:from-[#e9d8fd] hover:to-[#9f7aea] " >
               <h3 className="text-2xl">Easy Customization</h3>
               <p >Effortlessly tailor our templates to meet your specific needs.</p>
             </li>
