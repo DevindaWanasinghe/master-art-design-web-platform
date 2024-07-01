@@ -45,6 +45,9 @@ function Login() {
             if(err.response.data.message === 'Verify email first'){
               alert("Verify your email first");
             }
+            if(err.response.data.message === 'Invalid credentials'){
+              alert("Invalid credentials");
+            }
             
           }
           console.log(err);

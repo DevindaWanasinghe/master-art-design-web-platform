@@ -1,18 +1,34 @@
 const express = require('express');
-const app = express();
 const router = express.Router();
-const mysql = require('mysql');
 const nodemailer = require('nodemailer');
+const session = require('express-session');
 require('dotenv').config();
+const mysql = require('mysql2/promise');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
-app.use(express.json());
 const cookieparser = require('cookie-parser');
+const cors = require('cors');
 const db = require('../main/db');
 const authenticateToken = require('../main/authmiddleware');
 //registration with send email
 
-app.use(cookieparser());
+router.use(cors({
+    origin:['http://localhost:3000'],
+    credentials: true
+}));
+
+router.use(express.json());
+router.use(cookieparser());
+/*router.use(session({
+    secret:'secret',
+    resave:false,
+    saveUninitialized:true,
+    cookie: {
+        secure:false,
+        sameSite: 'None',
+        maxAge: 1000 * 60 * 60 *24
+    }
+}));*/
 
 router.post('/register',async(req ,res)=>{
     const { userName, phone, email, password } = req.body;
@@ -52,7 +68,7 @@ router.post('/register',async(req ,res)=>{
                     to: email, 
                     subject: 'MasterArt',
                     text: `Hi! There, Please follow the given link to verify your email 
-                    http://localhost:8081/user/verify/${verificationToken}  Thanks`  
+                    http://localhost:5000/user/verify/${verificationToken}  Thanks`  
                 };
                 transporter.sendMail(mailOptions, (error, info) => {
                     if (error) {
@@ -89,7 +105,7 @@ router.get('/verify/:token',(req, res) => {
 //login user
 router.post('/login',async(req,res)=>{
     const { email, password } = req.body;
-    await db.query('SELECT * FROM user WHERE email = ?',[email],async(err,result)=>{
+        db.query('SELECT * FROM user WHERE email = ?',[email],async(err,result)=>{
         if(err) res.json({err:err});
         if(result.length === 0){
             return res.status(400).json({ message: 'User not found' });
@@ -100,19 +116,31 @@ router.post('/login',async(req,res)=>{
         const isMatchPsw = await bcrypt.compare(password.toString(), result[0].password);
         if(!isMatchPsw) return res.status(400).json({ message: 'Invalid credentials' });
 
-        const token = jwt.sign({ id: result[0].id }, process.env.JWT_SECRET, { expiresIn: '1h' });
+        const token = jwt.sign({ id: result[0].userId }, process.env.JWT_SECRET, { expiresIn: '1h' });
+        //req.session.userid = result[0].userId;
         res.cookie('token',token);
-        res.json({ loginSuccses :'Sucsess' });
+        res.json({ login:'Sucsess' });
     });
 
 });
 
-router.get('/userAccount',authenticateToken,(req,res)=>{
-        
-        db.query('SELECT name,email,phone FROM users WHERE id = ?',[req.user.id],(err,result)=>{
-            if(err) return res.json({err:err});
-            res.json(result[0]);
-        });
-    });
+router.get('/Account', authenticateToken, (req, res) => {
+  db.query('SELECT userName, email, phone ,imageUrl FROM user WHERE userId = ?', [req.user.id], (err, result) => {
+    if (err) {
+      console.error('Fetch user data error:', err);
+      return res.status(500).json({ message: 'Internal server error' });
+    }
+    if (result.length === 0) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.json(result[0]);
+    console.log(result[0]);
+  });
+});
+
+router.get('/logout',(req,res) => {
+    res.clearCookie('token');
+    return res.json({status :'success'});
+});
 
 module.exports = router;
