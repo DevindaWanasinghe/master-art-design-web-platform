@@ -20,10 +20,10 @@ function Login() {
   axios.defaults.withCredentials = true;
 
   //google login
-  const login = useGoogleLogin({
+  /*const login = useGoogleLogin({
     onSuccess: credentialResponse => console.log(credentialResponse),
     onError: console.log("Login Failed")
-  });
+  });*/
 
   //custom login
   const handelsubmit =(e)=>{
@@ -33,7 +33,7 @@ function Login() {
     if(errors.email === "" && errors.password === ""){
       setloading(true);
       console.log(loading);
-      axios.post('http://localhost:8081/user/login',Inputvalues)
+      axios.post('http://localhost:5000/user/login',Inputvalues)
         .then(res =>{
           navigate('/');
         })
@@ -72,7 +72,7 @@ function Login() {
             </button>
             <p className='ml-6 text-white text-[15px]'>forgot Password?</p>
             <p className='text-center text-white text-[15px]'>or</p>
-            <button onClick={()=>{login()}} className='w-5/6 h-[45px] bg-#9573A9 border-[1px] rounded-[14px] mt-[30px] ml-[24px] text-white font-bold text-[15px]  hover:bg-blue-700  border-white flex justify-center' ><FcGoogle size={20} className=' ml-[2px] mt-[12px]' /><p className='mt-[10px] ml-[2px]'>Continue With Google</p></button>
+            <button /*onClick={()=>{login()}} */className='w-5/6 h-[45px] bg-#9573A9 border-[1px] rounded-[14px] mt-[30px] ml-[24px] text-white font-bold text-[15px]  hover:bg-blue-700  border-white flex justify-center' ><FcGoogle size={20} className=' ml-[2px] mt-[12px]' /><p className='mt-[10px] ml-[2px]'>Continue With Google</p></button>
         </form>
       </div>
 

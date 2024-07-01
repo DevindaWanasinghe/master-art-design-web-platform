@@ -15,15 +15,16 @@ function Login() {
       password:"",
 
     });
-
+    
     const [loading,setloading] = useState(false);
     const [errors,seterrors] =useState({});
     const navigate = useNavigate();
+    axios.defaults.withCredentials = true;
 
-    const login = useGoogleLogin({
+    /*const login = useGoogleLogin({
       onSuccess: credentialResponse => console.log(credentialResponse),
-      onError: console.log("Login Failed")
-    });
+      onError: error =>{console.log("registration faild"); alert("registration faild")}
+    });*/
 
     const handelSubmit=(e)=>{
       e.preventDefault();
@@ -31,13 +32,16 @@ function Login() {
      
       if(errors.userName === "" && errors.email === "" && errors.password ==="" && errors.phone === ""){
         setloading(true);
-        axios.post('http://localhost:8081/user/register',InputValue)
+        axios.post('http://localhost:5000/user/register',InputValue)
           .then(res =>{
             navigate('/login');
           })
           .catch(err => {
-            if(err.response.data.message  === 'User already exists'){
-              alert("User already exists");
+            if(err.response){
+              if(err.response.data.message  === 'User already exists'){
+                alert("User already exists");
+              }
+              console.log(err);
             }
             console.log(err);
           })
@@ -66,7 +70,7 @@ function Login() {
             {loading ? <span className=''><div class="w-8 h-8 border-2 border-dashed rounded-full animate-spin border-white ml-[17px] mt-[-3px]"></div><p  className='ml-[1px] mt-[-34px]'>loading...</p></span> :<p className='pb-[4px] '>Continue</p>}
             </button>
             <p className='text-center text-white text-[15px] mt-[-18px]'>or</p>
-            <button onClick={()=>{login()}} className='w-5/6 h-[45px] bg-#9573A9 border-[1px] rounded-[14px] mt-[5px] ml-[24px] text-white font-bold text-[15px]  hover:bg-blue-700  border-white flex justify-center mb-[23px]'><FcGoogle size={20} className=' ml-[2px] mt-[12px]' /><p className='mt-[10px] ml-[2px]'>Continue With Google</p></button>
+            <button /*onClick={()=>{login()}} */className='w-5/6 h-[45px] bg-#9573A9 border-[1px] rounded-[14px] mt-[5px] ml-[24px] text-white font-bold text-[15px]  hover:bg-blue-700  border-white flex justify-center mb-[23px]'><FcGoogle size={20} className=' ml-[2px] mt-[12px]' /><p className='mt-[10px] ml-[2px]'>Continue With Google</p></button>
         </form>
             
       </div>
