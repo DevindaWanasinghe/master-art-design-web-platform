@@ -24,7 +24,7 @@ function AdminAdd() {
   };
 
   return (
-    <div>
+    <div className='m-auto border-2 w-[600px] mt-[150px] p-[60px] bg-gradient-to-r from-slate-200 to-slate-400 rounded-[40px] border-[#ffffff]'>
     <form onSubmit={handleSubmit} className="max-w-2xl p-4 mx-auto">
       <table className="w-full border-collapse">
         <tbody>

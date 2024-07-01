@@ -44,14 +44,14 @@ function AdminUpdate() {
   }, []);
 
   return (
-    <div>
+    <div  className='m-auto border-2 w-[800px] mt-[60px] p-[60px] bg-gradient-to-r from-slate-200 to-slate-400 rounded-[40px] border-[#ffffff]'>
       <div className="max-w-2xl p-4 mx-auto">
-        <h2 className="mb-4 text-2xl font-bold">Templates List</h2>
+        <h2 className="mb-[30px] text-[30px] font-bold mt-[-18px] text-center">Templates List</h2>
         <ul>
           {templates.map((template) => (
-            <li key={template.id} className="mb-2">
+            <li key={template.id} className="flex items-center justify-between p-2 mb-2 border-b border-gray-300">
               <span>{template.name} - {template.price} - {template.section}</span>
-              <button onClick={() => handleEdit(template)} className="p-1 ml-2 text-white bg-yellow-500 rounded">Edit</button>
+              <button onClick={() => handleEdit(template)} className="p-1 ml-[70px] text-white bg-yellow-500 rounded hover:bg-yellow-600 ">Edit</button>
             </li>
           ))}
         </ul>
