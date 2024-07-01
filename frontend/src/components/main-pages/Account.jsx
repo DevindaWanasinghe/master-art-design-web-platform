@@ -3,6 +3,7 @@ import AcImg from '../../images/AccountImg/accover.png';
 import Bgimage from '../common/Bgimage';
 import UserImage from '../../images/AccountImg/userimage.png'; // assuming you have a user image
 import axios from 'axios';
+import SideBar from '../main-pages/Sidebar'
 
 function Account() {
   const [userData, setUserData] = useState({
@@ -46,8 +47,9 @@ function Account() {
   return (
     <div className="relative min-h-screen lg:h-screen">
       <Bgimage  />
+      <SideBar/>
       
-      <div className="border-2 lg:w-[1100px] lg:h-[653px] md:w-[1020px] text-white bg- relative z-10 pt-[50px]  xl:mt-[110px] xl:ml-[280px] md:ml-[0px] rounded-[31px] lg:ml-[100px] lg:mt-[100px] ">
+      <div className="border-2 lg:w-[1100px] lg:h-[653px] md:w-[1020px] text-white bg- relative z-10 pt-[50px]  xl:mt-[90px] xl:ml-[280px] md:ml-[0px] rounded-[31px] lg:ml-[100px] lg:mt-[100px] ">
         <div className="lg:w-[100%] relative ">
           <div className='absolute w-auto h-auto ml-[960px] mt-[47px]'>
             {login ? <button className='text-white border-white border-[1px] w-[110px] h-[50px] rounded-[18px] hover:bg-blue-700 backdrop-blur-xl' onClick={handleDelete}>Logout</button> : null}
@@ -59,8 +61,8 @@ function Account() {
             <img src={UserImage} alt="User" className="md:w-[80px]  md:h-[80px] lg:w-[120px] lg:h-[120px] xl:w-[215px] xl:h-[215px] rounded-full border-4 border-white" />}
 
             <div className=''>
-              {userData.userName ? <h2 className="text-lg font-bold text-white xl:pt-[300px] xl:ml-[-230px] xl:text-[40px] xl:font-extrabold text-center">{userData.userName}</h2> :<h2 className="text-lg font-bold text-white xl:pt-[300px] xl:ml-[-230px] xl:text-[40px] xl:font-extrabold">UserName</h2>}
-              {userData.userName ? <p className="text-white xl:ml-[-180px] xl:mt-4 text-center">{userData.email}</p> : <p className="text-white xl:ml-[-180px] xl:mt-4">Email</p>}
+              {userData.userName ? <h2 className="text-lg font-bold text-white xl:pt-[300px] xl:ml-[-240px] xl:text-[40px] xl:font-extrabold text-center">{userData.userName}</h2> :<h2 className="text-lg font-bold text-white xl:pt-[300px] xl:ml-[-230px] xl:text-[40px] xl:font-extrabold">UserName</h2>}
+              {userData.userName ? <p className="text-white xl:ml-[-230px] xl:mt-4 text-center ">{userData.email}</p> : <p className="text-white xl:ml-[-250px] xl:mt-4 xl:pl-[-20px]">Email</p>}
             </div>
           </div>
         </div>

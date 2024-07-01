@@ -10,9 +10,10 @@ function Footer() {
   return (
     <div className=''>
         <div>
-            <img className="float-right pr-[50px] mt-[50px]" src={Logo} alt="" />
+            <img className="float-right pr-[50px] mt-[30px] " src={Logo} alt="" />
+            <p className=" float-end mt-[250px] mr-[-300px]">&copy; 2024 Company. All Rights Reserved.</p>
         </div>
-        <footer className="p-16 pl-[80px] mt-20 mb-0 text-left bg-[#9573A9]">
+        <footer className="p-16 pl-[80px] mt-[100px] mb-[-30px] text-left bg-[#795a8b] ">
           
           <div className='flex flex-row '>
               <div className="flex flex-col mb-4 space-x-4 justify-normal">
@@ -27,13 +28,12 @@ function Footer() {
                     </div>
               </div>
               
-              <div className="flex flex-col space-x-4 ml-[200px]">
-                <p className="mb-6 ml-[15px]">Site Map</p>
+              <div className="flex flex-col space-x-4 space-y-[12px] ml-[200px]">
+                <p className="mb-4 ml-[15px] ">Site Map</p>
                 <Link to='/'> <a className=" hover:underline">Home</a> </Link>
                 <Link to='/template'> <a className=" hover:underline">Template</a> </Link>
                 <Link to='/account'><a className=" hover:underline">Account</a></Link>
                 <Link to='/terms'> <a className="hover:underline">Terms & Conditions</a> </Link>
-                <p className="mt-4">&copy; 2024 Company. All Rights Reserved.</p>
               </div>
               
           </div>

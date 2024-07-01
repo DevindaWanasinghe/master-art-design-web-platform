@@ -28,7 +28,7 @@ function Template() {
         console.error('error fetching the templates!', error);
 
         //sample image
-        setTemplates(generateDummyTemplates(12));
+        //setTemplates(generateDummyTemplates(12));
         
       });
   }, []);
@@ -36,13 +36,14 @@ function Template() {
 
 
   //for sample image
-  const generateDummyTemplates = (count) => {
+  /*const generateDummyTemplates = (count) => {
     return Array.from({ length: count }, (_, index) => ({
       name: `Template ${index + 1}`,
       price: `Rs ${(0 + 500)}`,
       image: sampleImage,sampleImage2,
     }));
   };
+  */
 
   
 
