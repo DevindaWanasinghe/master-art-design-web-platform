@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import 'tailwindcss/tailwind.css';
-import backgroundImage from '../../images/Home/Background girl image.png';  
-
-import Sidebar from "../main-pages/Sidebar";
+//import backgroundImage from '../../images/Home/Background girl image.png';  
+import SideBar from "../main-pages/Sidebar"
 import Header from "../main-pages/Header";
 import Bgimage from '../common/Homebg';
 import Footer from '../common/Footer';
@@ -33,22 +32,24 @@ const HomePage = () => {
       //   backgroundAttachment: 'fixed',
       // }}
       > 
-      <Bgimage/>
-      <div><Sidebar></Sidebar></div>
-      <div><Header></Header></div>
-      
+       <Bgimage/>
+     
       {/* <div className="absolute inset-0 bg-black opacity-50"></div> */}
-      
-
       {/* <div className="pb-[0.2px]"></div> */}
 
       <div className="relative z-10">
-        <header className="flex items-center justify-between p-5">
+        <header className="flex items-center justify-between p-0">
           {/* Header Content */}
         </header>
-        <main className="flex flex-col px-10 mt-20">
+        <div className='pt-0 '>
+          <div className=''><Header></Header></div>
+        </div>
+        <div>
+          
+        </div>
+        <main className="flex flex-col px-10 mt-[80px]">
           <div className="text-right">
-            <h1 className="italic font-bold ng-none text-7xl">WHERE IDEAS</h1>
+            <h1 className="italic font-bold ng-none text-7xl ">WHERE IDEAS</h1>
             <h1 className="italic font-extrabold ng-none text-9xl"> SPARKLE</h1>
             <h1 className="italic font-bold leading-none text-8xl">ONLINE</h1>
             <p className="mt-4 mr-2 text-2xl">
@@ -57,9 +58,9 @@ const HomePage = () => {
               realms where imagination reigns supreme. Join us and discover a world where<br/>
               every click sparks new adventures. Let Whimsy be your guide to endless inspiration!<br/>
             </p>
-            <div class="flex flex-col">
+            <div class="flex flex-col ">
                   <div>
-                    <img className="float-right" src={Logo} alt="" />
+                    <img className="float-right backdrop-blur-sm" src={Logo} alt="logo" />
                   </div>
                   <div>
                     <button className="px-10 py-3 bg-gradient-to-r from-[#9573A9] to-[#D3A4F0] rounded-[40px] text-2xl border-[3px] bg-opacity-75 hover:from-[#e9d8fd] hover:to-[#9f7aea]">GET STARTED</button>
@@ -93,23 +94,24 @@ const HomePage = () => {
               <span className="mx-4 text-4xl font-bold">PERSONAL DESIGN</span>
             </div>
           </div>
+          <div><SideBar/></div> 
         </section>
-        <section className="mt-20 text-center ">
+        <section className="mt-20 text-center">
           <h2 className="text-5xl italic font-extrabold text-[#9573A9]">WHY CHOOSE US</h2>
-          <ul className="mt-4 space-y-4 text-left list-disc list-inside bg-opacity-75 md:text-center md:space-y-0 md:space-x-4 md:list-none md:flex md:justify-center">
-            <li className="p-6 h-[100px] rounded-[100px] border-white border-[2px] bg-opacity-75 bg-gradient-to-r from-[#9573A9] to-[#D3A4F0]  hover:from-[#e9d8fd] hover:to-[#9f7aea]" >
+          <ul className="mt-4 ml-[80px] mr-[20px] space-y-4 text-left list-disc list-inside bg-opacity-75 md:text-center md:space-y-0 md:space-x-4 md:list-none md:flex md:justify-center">
+            <li className="p-6 pt-2 h-[100px] rounded-[100px] border-white border-[2px] bg-opacity-75 bg-gradient-to-r from-[#9573A9] to-[#D3A4F0]  hover:from-[#e9d8fd] hover:to-[#9f7aea]" >
               <h3 className="text-2xl">5-Hour Delivery Time</h3>
               <p>Get your templates fast with our lightning-quick 5-hour delivery.</p>
             </li>
-            <li className="p-6 h-[100px] rounded-[100px] border-white border-[2px] bg-gradient-to-r from-[#9573A9] to-[#D3A4F0]  hover:from-[#e9d8fd] hover:to-[#9f7aea] " >
+            <li className="p-6 pt-2 h-[100px] rounded-[100px] border-white border-[2px] bg-gradient-to-r from-[#9573A9] to-[#D3A4F0]  hover:from-[#e9d8fd] hover:to-[#9f7aea] " >
               <h3 className="text-2xl">Affordable Prices</h3>
               <p>Enjoy high-quality designs at prices that won't break the bank.</p>
             </li>
-            <li className="p-6 h-[100px] rounded-[100px] border-white border-[2px] bg-gradient-to-r from-[#9573A9] to-[#D3A4F0]  hover:from-[#e9d8fd] hover:to-[#9f7aea] " >
+            <li className="p-6 pt-2 h-[100px] rounded-[100px] border-white border-[2px] bg-gradient-to-r from-[#9573A9] to-[#D3A4F0]  hover:from-[#e9d8fd] hover:to-[#9f7aea] " >
               <h3 className="text-2xl">Wide Selection</h3>
               <p>Choose from a vast array of templates to fit any project or style.</p>
             </li>
-            <li className="p-6 h-[100px] rounded-[100px] border-white border-[2px] bg-gradient-to-r from-[#9573A9] to-[#D3A4F0]  hover:from-[#e9d8fd] hover:to-[#9f7aea] " >
+            <li className="p-6 pt-2 h-[100px] rounded-[100px] border-white border-[2px] bg-gradient-to-r from-[#9573A9] to-[#D3A4F0]  hover:from-[#e9d8fd] hover:to-[#9f7aea] " >
               <h3 className="text-2xl">Easy Customization</h3>
               <p >Effortlessly tailor our templates to meet your specific needs.</p>
             </li>

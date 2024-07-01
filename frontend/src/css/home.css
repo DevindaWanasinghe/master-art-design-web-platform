@@ -260,7 +260,14 @@
 }
 
 .animate-marquee {
-  display: inline-block;
-  white-space: nowrap;
+  /* display: inline-block;
+  white-space: nowrap; */
   animation: marquee 15s linear infinite;
 }
+
+.text-section {
+  margin-top: 20px; /* Adjust as needed */
+  margin-left: 100px; /* Ensure it clears the sidebar width */
+}
+
+
