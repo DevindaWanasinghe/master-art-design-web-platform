@@ -67,7 +67,7 @@ function Facebook() {
       <Sidebar/> 
       <Navigatebar heartCount={heartCount} anyHeartRed={anyHeartRed} /> {/*Pass heartCount and anyHeartRed to Navigatebar */}
 
-        <div className="relative z-10 pt-16 left-[50px]">
+        <div className="relative z-10 pt-16 left-[40px]">
               <div className='pb-28 '></div>
                 {/* Rendering  cards */}
                 <div className="p-4 mt-44 md:mt-0 sm:mt-0">
