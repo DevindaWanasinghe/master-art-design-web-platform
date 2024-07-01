@@ -9,7 +9,7 @@ function Header() {
 
     <div className=''>
       <div className='absolute inline w-screen'>
-        <div><img src={Logo01} alt='logo' className='w-[75px] h-[58px] ml-[75px] mt-2 float-left'></img></div>
+        <div><img src={Logo01} alt='logo' className='w-[75px] h-[58px] ml-[85px] mt-2 float-left'></img></div>
 
         <div className='w-[667px] h-[50px] float-right flex mt-4'>
           <div className='w-[288px] h-[38px] flex border-white border-[2px] rounded-[188px] mr-[23px]'>

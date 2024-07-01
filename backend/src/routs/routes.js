@@ -1,6 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const db = require('../main/db');
+const cors = require('cors');
+
+router.use(cors({
+
+}));
+
 
 // Get templates by section
 router.get('/templates',async(req, res) => {

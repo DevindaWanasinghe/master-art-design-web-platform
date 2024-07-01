@@ -6,6 +6,7 @@ import Bgimage from '../common/Bgimage';
 import Card from '../common/Card';
 import sampleImage from '../../images/TemplateImg/bc2.jpg';
 import sampleImage2 from '../../images/TemplateImg/bc1.jpg';
+import Sidebar from '../main-pages/Sidebar'
 //import { Link } from 'react-router-dom';
 //import '../../css/template.css';
 
@@ -68,8 +69,10 @@ function Template() {
     <div>
       {/* Background images */}
       <div className='relative min-h-screen '>
-        <Bgimage/>
+        <Bgimage/>   
         <Navigatebar heartCount={heartCount} anyHeartRed={anyHeartRed} /> {/*Pass heartCount and anyHeartRed to Navigatebar */}
+        <Sidebar/> 
+       
 
           <div className="relative z-10 pt-16">
                 <div className='pb-28 '></div>
