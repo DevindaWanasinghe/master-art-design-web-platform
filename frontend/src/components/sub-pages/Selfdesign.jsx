@@ -5,6 +5,7 @@ import '../../../src/index.css';
 import Navigatebar from '../common/Navigatebar';
 import Bgimage from '../common/Bgimage';
 import Card from '../common/Card';
+import Sidebar from '../main-pages/Sidebar';
 //import { Link } from 'react-router-dom';
 
 function Selfdesign() {
@@ -63,9 +64,10 @@ function Selfdesign() {
       {/* Background images */}
       <div className='relative min-h-screen '>
         <Bgimage/>
+        <Sidebar/>
         <Navigatebar heartCount={heartCount} anyHeartRed={anyHeartRed} /> {/*Pass heartCount and anyHeartRed to Navigatebar */}
 
-          <div className="relative z-10 pt-16">
+          <div className="relative z-10 pt-16 left-[30px]">
                 <div className='pb-28 '></div>
                   {/* Rendering  cards */}
                   <div className="p-4 mt-44 md:mt-0 sm:mt-0">

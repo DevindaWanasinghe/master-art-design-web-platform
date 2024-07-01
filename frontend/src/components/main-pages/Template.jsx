@@ -70,15 +70,16 @@ function Template() {
       {/* Background images */}
       <div className='relative min-h-screen '>
         <Bgimage/>   
-        <Navigatebar heartCount={heartCount} anyHeartRed={anyHeartRed} /> {/*Pass heartCount and anyHeartRed to Navigatebar */}
         <Sidebar/> 
+        <Navigatebar heartCount={heartCount} anyHeartRed={anyHeartRed} /> {/*Pass heartCount and anyHeartRed to Navigatebar */}
+       
        
 
-          <div className="relative z-10 pt-16">
+          <div className="relative z-10 pt-16 left-[70px]">
                 <div className='pb-28 '></div>
                   {/* Rendering  cards */}
                   <div className="p-4 mt-44 md:mt-0 sm:mt-0">
-                    <div className="container grid grid-cols-1 gap-4 mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-[56px] md:gap-y-[96px] sm:gap-y-[100px] sm:ml-[40px] ml-[150px] xl:ml-[180px] lg:ml-[-10px]"> 
+                    <div className="container grid grid-cols-1 gap-4 mx-auto sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 md:gap-[56px] md:gap-y-[96px] sm:gap-y-[100px] sm:ml-[40px] ml-[150px] xl:ml-[90px] lg:ml-[-10px]"> 
                     {templates.map((template, index) => (
                       <Card
                         key={index}
