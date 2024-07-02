@@ -12,7 +12,7 @@ function Sidebar() {
   return (
 
       <div className=' w-[80px] border-l-0 h-Screen fixed mt-0'>
-      <div className='w-[39px] h-[391px] absolute ml-[10px] top top-[25%] mt-[-50px]'>
+      <div className='w-[39px] h-[391px] absolute ml-[15px] top-[21%] mt-[0px]'>
           
           <NavLink to='/account'><div className='bg-white w-[40px] h-[40px] rounded-[30px] mt-4 flex  items-center justify-center icon text-black mb-[55px]'><RiUserFill size={30} className='cursor-pointer icon' /></div></NavLink>    
           <NavLink to='/template'><div className='bg-white w-[40px] h-[40px] rounded-[30px] mt-4 flex  items-center justify-center icon text-black mb-[55px]'><FaRegImages size={30} className='cursor-pointer icon' /></div></NavLink>

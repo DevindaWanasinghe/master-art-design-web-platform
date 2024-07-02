@@ -6,9 +6,9 @@ module.exports = {
       fontFamily: {
         'greens-wood': ['Green King\'s Wood', 'sans-serif'],
       },
-      backgroundImage: {
-        'login-bg': "url('/src/images/Home/Background girl image.png')",
-      },
+      // backgroundImage: {
+      //   'login-bg': "url('/src/images/Home/Background girl image.png')",
+      // },
       colors: {
         'custom-purple': "#9573A9",
       },

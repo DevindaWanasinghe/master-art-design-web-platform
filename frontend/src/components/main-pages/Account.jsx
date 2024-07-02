@@ -100,7 +100,7 @@ function Account() {
               <h3 className="mb-4 text-[24px] font-bold text-white">Notification Center</h3>
               <ul className="space-y-4">
                 {[...Array(3)].map((_, i) => (
-                  <li key={i} className="p-4 text-gray-300 bg-gray-500 rounded-md opacity-95">
+                  <li key={i} className="p-4 text-gray-300 bg-[#a855f7] backdrop-blur-md rounded-md opacity-95">
                     <p className='text-white '>We hope this message finds you well. We are writing to inform you about the latest update regarding your ongoing design project with us.</p>
                   </li>
                 ))}

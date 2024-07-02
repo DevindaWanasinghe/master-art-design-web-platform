@@ -56,7 +56,7 @@ const HomePage = () => {
               Dive into a digital wonderland with Whimsy! Journey through captivating tales,<br/>
               unleash your creativity, and connect with fellow adventurers. Explore boundless<br/>
               realms where imagination reigns supreme. Join us and discover a world where<br/>
-              every click sparks new adventures. Let Whimsy be your guide to endless inspiration!<br/>
+              every click sparks new adventures.   Let Whimsy be your to endless inspiration!<br/>
             </p>
             <div class="flex flex-col ">
                   <div>

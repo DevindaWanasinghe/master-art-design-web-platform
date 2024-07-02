@@ -7,6 +7,7 @@ import Validation from "../../script/loginvalidation";
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { useGoogleLogin } from '@react-oauth/google';
+import Bgimage from '../common/Homebg'
 function Login() {
 
   const [Inputvalues,setInputvalues] = useState({
@@ -59,11 +60,12 @@ function Login() {
   return (
 
     <div className=" overflow-hidden bg-center bg-cover bg-login-bg min-h-[720px] w-screen">
-      
+
+      <div><Bgimage/></div>
       <div><Sidebar></Sidebar></div>
       <div><Header></Header></div>
       
-      <div className='w-1/4 h-[492px] rounded-[33px] border-[2px] border-white backdrop-blur-xl mt-[77px] block absolute left-2/3'>
+      <div className='w-1/4 h-[492px] rounded-[33px] border-[2px] border-white backdrop-blur-xl mt-[160px] block absolute left-2/3'>
         <form onSubmit={handelsubmit}>
             <p className=' text-white text-[48px] text-center mt-[15px]'>Welcome!</p>
             <input onChange={e => setInputvalues({...Inputvalues,email:e.target.value})} className='w-5/6 h-[45px] bg-transparent border-[1px] border-white rounded-[14px] mt-[15px]   text-white placeholder-white focus:outline-0  p-4 lg:ml-[25px] md:ml-[15px]'placeholder='Email' type='Email' name='Email'></input>

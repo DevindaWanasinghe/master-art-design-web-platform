@@ -14,7 +14,8 @@ const Navigatebar = ({ heartCount, anyHeartRed }) => {
 
 
   return (
-    <div className='fixed top-0 left-0 z-20 w-full bg-black bg-opacity-70 backdrop-blur-sm'>
+    <div className='w-auto h-auto '>
+    <div className='fixed top-0 left-0 z-20 w-full ml-[68px] bg-black bg-opacity-40 backdrop-blur-sm'>
       <div className=' flex flex-col justify-between w-full pr-0 mt-16 ml-[-26px] text-white md:flex-row  md:pr-[96px]'>
           <div className='flex flex-col ml-4 space-y-4 md:flex-row md:ml-36 h-7 md:space-y-0'>
 
@@ -47,6 +48,7 @@ const Navigatebar = ({ heartCount, anyHeartRed }) => {
               </div>   
             </div>  
         </div>
+    </div>
     </div>
 
   )

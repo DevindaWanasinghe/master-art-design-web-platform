@@ -70,9 +70,11 @@ function Template() {
     <div>
       {/* Background images */}
       <div className='relative min-h-screen '>
-        <Bgimage/>   
-        <Sidebar/> 
-        <Navigatebar heartCount={heartCount} anyHeartRed={anyHeartRed} /> {/*Pass heartCount and anyHeartRed to Navigatebar */}
+     
+        <div><Bgimage/> </div>
+        <div><Sidebar/> </div>
+         <div><Navigatebar heartCount={heartCount} anyHeartRed={anyHeartRed} /> {/*Pass heartCount and anyHeartRed to Navigatebar */}</div>
+       
        
        
 
